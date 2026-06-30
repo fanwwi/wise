@@ -270,3 +270,21 @@
     grid-template-columns: 1fr;
   }
 }
+
+.number {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  font-size: 42px;
+  font-weight: 800;
+  color: white;
+  gap: 2px;
+}
+
+.suffix {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  margin-left: 2px;
+}

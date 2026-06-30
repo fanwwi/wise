@@ -6,7 +6,7 @@ import { PremiumButton } from "@/components/shared/PremiumButton/PremiumButton";
 
 export const Hero = () => {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="#main">
       <div className={styles.background} />
       <div className={styles.overlay} />
       <div className={styles.glowLeft} />

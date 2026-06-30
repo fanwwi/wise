@@ -36,8 +36,9 @@ export const Header = () => {
       className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}
     >
       <nav className={styles.nav}>
-        <div className={styles.logo}>WISE</div>
-
+        <a href="#main" className={styles.logoA}>
+          <div className={styles.logo}>WISE</div>
+        </a>
         <div className={styles.links}>
           <a href="#about">О нас</a>
           <a href="#countries">Страны</a>

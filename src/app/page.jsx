@@ -1,6 +1,8 @@
+import Compare from "@/components/sections/Compare/Compare";
 import Countries from "@/components/sections/Countries/Countries";
 import { Hero } from "@/components/sections/Hero/Hero";
 import Roadmap from "@/components/sections/Roadmap/Roadmap";
+import Stories from "@/components/sections/Stories/Stories";
 import { TrustBar } from "@/components/sections/TrustBar/TrustBar";
 import Value from "@/components/sections/Value/Value";
 import Whyus from "@/components/sections/Whyus/Whyus";
@@ -12,11 +14,13 @@ export default function Home() {
     <main>
       <Hero />
       <Whyus />
-      <Partners />
       <TrustBar />
+      <Compare />
       <Value />
+      <Partners />
       <Roadmap />
       <Countries />
+      <Stories />
     </main>
   );
 }

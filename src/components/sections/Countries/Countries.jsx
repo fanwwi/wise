@@ -101,7 +101,7 @@ export default function Countries() {
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="countries">
       <h2 className={styles.title}>
         Глобальные возможности для твоего будущего
       </h2>
@@ -134,7 +134,7 @@ export default function Countries() {
 
                 <div className={styles.bottom}>
                   <span className={styles.price}>от {c.price}</span>
-                  <button className={styles.more}>Подробнее</button>
+                  <button className={styles.more}>Получить план поступления</button>
                 </div>
               </div>
             </div>
