@@ -1,0 +1,226 @@
+.section {
+  padding: 100px 24px;
+  background: #f6f9ff;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  color: #00429e;
+  margin-bottom: 50px;
+}
+
+/* WRAPPER */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ARROWS */
+.btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: #0b63ff;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* CAROUSEL */
+.carousel {
+  display: flex;
+  gap: 24px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  max-width: 1000px;
+  padding: 10px;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.card {
+  min-width: 320px;
+  border-radius: 24px;
+  overflow: hidden;
+
+  background: transparent;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  will-change: transform;
+}
+
+/* hover animation */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.18);
+}
+
+/* IMAGE SECTION */
+.imageBox {
+  position: relative;
+  height: 220px;
+
+  transition: transform 0.35s ease;
+}
+
+/* slight parallax feel */
+.card:hover .imageBox {
+  transform: scale(1.05);
+}
+
+/* IMAGE */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+/* optional extra depth */
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+/* WHITE INFO PANEL */
+.info {
+  background: white;
+  padding: 16px 16px 18px;
+
+  transition: transform 0.35s ease;
+}
+
+/* subtle lift sync */
+.card:hover .info {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   TOP IMAGE SECTION
+========================= */
+.imageBox {
+  position: relative;
+  height: 220px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* dark overlay (stronger bottom) */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* flag + name on image */
+.topContent {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.flag {
+  width: 40px;
+  height: 20px;
+}
+
+/* =========================
+   BOTTOM WHITE PANEL
+========================= */
+.info {
+  background: white;
+  padding: 16px 16px 18px;
+}
+
+/* DESCRIPTION */
+.desc {
+  font-size: 14px;
+  color: #0b2a55;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+/* FACTORS */
+.factors {
+  font-size: 12.5px;
+  color: #0b63ff;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* BOTTOM ROW */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 10px;
+}
+
+.price {
+  font-weight: 700;
+  color: #0b2a55;
+}
+
+/* CTA */
+.more {
+  background: #0b63ff;
+  color: white;
+
+  border: none;
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.more:hover {
+  background: #094fd1;
+}

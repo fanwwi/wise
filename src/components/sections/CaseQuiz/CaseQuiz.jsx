@@ -1,15 +1,37 @@
-.container {
-  @apply py-24 bg-[#0a0a0a] text-center;
-}
+"use client";
+import { useState } from "react";
+import { QuizStep } from "./QuizStep";
+import styles from "./CaseQuiz.module.css";
 
-.quizWrapper {
-  @apply max-w-xl mx-auto p-12 glass-card rounded-3xl mt-8;
-}
+export const CaseQuiz = () => {
+  const [step, setStep] = useState(1);
+  const [data, setData] = useState({});
 
-.title {
-  @apply text-4xl font-bold;
-}
+  const nextStep = (field, value) => {
+    setData({ ...data, [field]: value });
+    setStep(step + 1);
+  };
 
-.option {
-  @apply block w-full p-4 mt-4 border border-white/10 rounded-xl hover:bg-blue-600 transition;
-}
+  return (
+    <section className={styles.container}>
+      <h2 className={styles.title}>Найдите свое будущее</h2>
+      <div className={styles.quizWrapper}>
+        {step === 1 && (
+          <QuizStep question="Ваш класс?" field="grade" onNext={nextStep} />
+        )}
+        {step === 2 && (
+          <QuizStep
+            question="Интересующая страна?"
+            field="country"
+            onNext={nextStep}
+          />
+        )}
+        {step === 3 && (
+          <div className={styles.result}>
+            <p>Ваша стратегия готова. Запишитесь на разбор в WhatsApp.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
