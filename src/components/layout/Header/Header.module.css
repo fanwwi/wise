@@ -1,0 +1,217 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 999;
+
+  padding: 14px 16px; /* 🔥 ключевой фикс */
+}
+
+/* NAV — FULL WIDTH PREMIUM LAYOUT */
+.nav {
+  all: unset;
+max-width: 900px;
+margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 68px;
+
+  padding: 0 24px;
+
+  box-sizing: border-box;
+}
+
+/* ---------------- HERO STATE ---------------- */
+
+.header:not(.scrolled) .nav {
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.scrolled {
+  background: #fff;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+/* ---------------- SCROLLED STATE ---------------- */
+
+.scrolled .nav {
+  background: #fff;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 18px;
+}
+
+/* ---------------- LOGO ---------------- */
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+
+  color: white;
+
+  transition: 0.3s;
+}
+
+.scrolled .logo {
+  color: #0f172a;
+}
+
+/* ---------------- LINKS ---------------- */
+
+.links {
+  display: flex;
+  gap: 36px;
+}
+
+.links a {
+  text-decoration: none;
+
+  font-size: 16px; /* минимум 16 соблюдаем */
+  font-weight: 500;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  transition: 0.25s ease;
+}
+
+.links a:hover {
+  color: #3aa0ff;
+}
+
+.scrolled .links a {
+  color: #334155;
+}
+
+.scrolled .links a:hover {
+  color: #3aa0ff;
+}
+
+/* ---------------- CTA BUTTON (MAIN UPGRADE) ---------------- */
+
+.cta {
+  position: relative;
+
+  height: 48px;
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: white;
+
+  background: linear-gradient(135deg, #1677ff, #00c2ff);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  animation: glowPulse 2.2s ease-in-out infinite;
+}
+/* TEXT LAYER */
+.cta::before {
+  content: "";
+
+  position: absolute;
+  inset: -40px;
+
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.75), transparent 60%);
+
+  filter: blur(20px);
+
+  opacity: 0.7;
+
+  z-index: -1;
+
+  animation: glowPulse 2.2s ease-in-out infinite;
+}
+
+/* SHINE ANIMATION */
+.cta:hover::after {
+  animation: shine 1.2s ease forwards;
+}
+
+/* HOVER */
+.cta:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 18px 50px rgba(0, 140, 255, 0.55);
+}
+
+/* ACTIVE */
+.cta:active {
+  transform: scale(0.98);
+}
+
+/* 🔥 INFINITE GLOW ANIMATION */
+.cta::before {
+  content: "";
+
+  position: absolute;
+  inset: -40px;
+
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.55), transparent 60%);
+
+  opacity: 0.6;
+
+  filter: blur(18px);
+
+  animation: pulseGlow 2.8s ease-in-out infinite;
+
+  z-index: -1;
+}
+
+/* ---------------- KEYFRAMES ---------------- */
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0.35;
+  }
+}
+
+@keyframes shine {
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 900px) {
+  .links {
+    display: none;
+  }
+
+  .header {
+    padding: 14px 16px;
+  }
+
+  .nav {
+    height: 62px;
+    padding: 0 16px;
+  }
+}

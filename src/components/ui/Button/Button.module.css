@@ -1,0 +1,4 @@
+.button {
+  @apply px-8 py-4 rounded-full font-medium transition-all duration-300;
+  @apply bg-white text-black hover:bg-electric hover:text-white hover:scale-105;
+}

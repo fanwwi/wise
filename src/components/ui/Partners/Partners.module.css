@@ -1,0 +1,118 @@
+.section {
+  padding: 60px 0;
+  text-align: center;
+
+  background: #1f86ff;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+/* =========================
+   SLIDER WRAPPER
+========================= */
+.slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* =========================
+   TRACK (ONLY ONE ANIMATION)
+========================= */
+.track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+
+  animation: marquee 18s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* 🔥 PROPER LOOP */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  position: relative;
+
+  width: 180px;
+  height: 120px;
+
+  background: #ffffff;
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* LOGO */
+.logo {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 12px;
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+.overlay span {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+/* hover */
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover .overlay span {
+  transform: translateY(0);
+}
+
+.card:hover .logo {
+  transform: scale(1.05);
+}

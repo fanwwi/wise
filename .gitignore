@@ -1,0 +1,25 @@
+# Зависимости
+node_modules/
+
+# Сборка Next.js
+.next/
+out/
+build/
+
+# Системные файлы macOS/Windows
+.DS_Store
+Thumbs.db
+
+# Логи и кэши
+*.log
+.eslintcache
+.cache
+
+# Переменные окружения (ОЧЕНЬ ВАЖНО!)
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Папка с результатами тестов (если появятся)
+coverage/

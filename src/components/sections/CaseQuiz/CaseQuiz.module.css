@@ -1,0 +1,15 @@
+.container {
+  @apply py-24 bg-[#0a0a0a] text-center;
+}
+
+.quizWrapper {
+  @apply max-w-xl mx-auto p-12 glass-card rounded-3xl mt-8;
+}
+
+.title {
+  @apply text-4xl font-bold;
+}
+
+.option {
+  @apply block w-full p-4 mt-4 border border-white/10 rounded-xl hover:bg-blue-600 transition;
+}
