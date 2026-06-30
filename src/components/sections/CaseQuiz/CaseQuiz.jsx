@@ -35,7 +35,7 @@ const steps = [
 
 const universities = [
   "Bellevue College",
-  "Notheastern university",
+  "Northeastern University",
   "University of Colorado",
 ];
 
@@ -80,40 +80,39 @@ export const CaseQuiz = () => {
             <motion.div
               key="result"
               className={styles.result}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.45 }}
             >
               <div className={styles.resultHeader}>
-                <h3>Готово!🎉</h3>
-
+                <h3>Готово🎉</h3>
 
                 <p className={styles.subtitle}>
-                  По твоему профилю подходит <b>35 университетов</b> в
-                  направлении <b>США</b>
+                  Тебе подходят <b>25 университетов</b>
                 </p>
               </div>
 
-              <div className={styles.blockTitle}>Топ-3 варианта для тебя:</div>
+              <div className={styles.blockTitle}>
+                Топ-3 варианта для тебя:
+              </div>
 
               <div className={styles.universities}>
                 {universities.map((u, i) => (
-                  <div className={styles.uniCard}>
+                  <div key={i} className={styles.uniCard}>
                     <div className={styles.lockOverlay}>
                       <div className={styles.lockIcon}>🔒</div>
-                      <span>Открыто после консультации</span>
                     </div>
 
                     <div className={styles.uniContent}>
                       <span className={styles.uniName}>{u}</span>
-                      <span className={styles.uniMeta}>Совпадение 95%</span>
+                      <span className={styles.uniMeta}> Совпадение 95%</span>
                     </div>
                   </div>
                 ))}
               </div>
 
               <button className={styles.cta}>
-                Получить полный список + бесплатный разбор кейса 
+                Получить полный список + бесплатный разбор кейса
               </button>
             </motion.div>
           )}
