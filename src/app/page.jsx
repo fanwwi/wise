@@ -1,3 +1,4 @@
+import { CaseQuiz } from "@/components/sections/CaseQuiz/CaseQuiz";
 import Compare from "@/components/sections/Compare/Compare";
 import Countries from "@/components/sections/Countries/Countries";
 import { Hero } from "@/components/sections/Hero/Hero";
@@ -21,6 +22,7 @@ export default function Home() {
       <Roadmap />
       <Countries />
       <Stories />
+      <CaseQuiz />
     </main>
   );
 }

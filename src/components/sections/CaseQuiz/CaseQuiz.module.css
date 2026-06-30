@@ -1,15 +1,228 @@
 .container {
-  @apply py-24 bg-[#0a0a0a] text-center;
-}
-
-.quizWrapper {
-  @apply max-w-xl mx-auto p-12 glass-card rounded-3xl mt-8;
+  padding: 100px 24px;
+  background: #ffffff;
 }
 
 .title {
-  @apply text-4xl font-bold;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  color: #0b3a8a;
+  margin-bottom: 50px;
+}
+
+/* WRAPPER */
+.quizWrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+/* =========================
+   STEP
+========================= */
+.motionCard {
+  transform-style: preserve-3d;
+}
+
+.stepCard {
+  background: #1f86ff;
+  padding: 40px;
+  border-radius: 24px;
+  color: white;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+.question {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .option {
-  @apply block w-full p-4 mt-4 border border-white/10 rounded-xl hover:bg-blue-600 transition;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.option:hover {
+  background: #ffffff;
+  color: #1f86ff;
+}
+
+/* =========================
+   RESULT BLOCK
+========================= */
+.result {
+  background: linear-gradient(135deg, #1f86ff, #0b4bd6);
+  padding: 50px 30px;
+  border-radius: 26px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* HEADER */
+.resultHeader h3 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* SECTION TITLE */
+.blockTitle {
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 800;
+  opacity: 0.95;
+}
+
+/* =========================
+   UNIVERSITY LIST
+========================= */
+.universities {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+/* CARD */
+.uniCard {
+  position: relative;
+
+  padding: 18px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  overflow: hidden;
+
+  transition: transform 0.25s ease;
+}
+
+.uniCard:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   LOCK OVERLAY (MAIN EFFECT)
+========================= */
+.lockOverlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(10, 10, 20, 0.81); /* 👈 ТЕМНЫЙ ОВЕРЛЕЙ */
+  backdrop-filter: blur(2px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  z-index: 10; /* 👈 ВАЖНО: выше текста */
+}
+.uniCard:hover .lockOverlay {
+  background: rgba(1, 15, 47, 0.742);
+}
+
+.lockIcon {
+  font-size: 20px;
+  animation: pulseLock 1.8s ease-in-out infinite;
+}
+
+.lockOverlay span {
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  opacity: 0.95;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.uniContent {
+  position: relative;
+  z-index: 3;
+
+  color: white;
+}
+
+.uniName {
+  display: block;
+  font-size: 15px;
+  font-weight: 900;
+  color: #d5d5d5;
+}
+
+.uniMeta {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+.cta {
+  margin-top: 20px;
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: white;
+  color: #0b4bd6;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes pulseLock {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
 }
