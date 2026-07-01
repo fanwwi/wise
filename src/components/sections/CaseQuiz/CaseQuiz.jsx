@@ -79,7 +79,7 @@ export const CaseQuiz = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="quiz">
       <h2 className={styles.title}>Подбор университета за 60 секунд</h2>
 
       {/* PROGRESS */}
