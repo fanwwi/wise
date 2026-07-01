@@ -2,15 +2,14 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { QuizStep } from "./QuizStep";
-import styles from "./CaseQuiz.module.css";
 import { FaLock } from "react-icons/fa";
+import styles from "./CaseQuiz.module.css";
 
 const steps = [
   {
     question: "В каком ты классе?",
     field: "grade",
-    options: ["9-10 класс", "11 класс"],
+    options: ["9 класс", "10 класс", "11 класс"],
   },
   {
     question: "Куда хочешь поступать?",
@@ -20,12 +19,12 @@ const steps = [
   {
     question: "Какая программа?",
     field: "program",
-    options: ["Bachelor", "Foundation", "Master"],
+    options: ["Бакалавр", "Магистратура", "PhD"],
   },
   {
     question: "Уровень английского?",
     field: "english",
-    options: ["Beginner", "Intermediate", "Advanced"],
+    options: ["Beginner(A1-A2)", "Intermediate(B1-B2)", "Advanced(C1-C2)"],
   },
   {
     question: "Бюджет?",
@@ -35,18 +34,9 @@ const steps = [
 ];
 
 const universities = [
-  {
-    name: "Bellevue College",
-    logo: "/images/bellevue.jpg",
-  },
-  {
-    name: "Northeastern University",
-    logo: "/images/northeastern.png",
-  },
-  {
-    name: "University of Colorado",
-    logo: "/images/colorado.png",
-  },
+  { name: "Bellevue College", logo: "/images/bellevue.jpg" },
+  { name: "Northeastern University", logo: "/images/northeastern.png" },
+  { name: "University of Colorado", logo: "/images/colorado.png" },
 ];
 
 export const CaseQuiz = () => {
@@ -58,22 +48,26 @@ export const CaseQuiz = () => {
 
   const current = steps[step];
 
-  const handleNext = () => {
-    if (!selected) return;
+  const handleSelect = (opt) => {
+    setSelected(opt);
 
-    setData((p) => ({ ...p, [current.field]: selected }));
-    setSelected(null);
+    // 🚀 авто-переход — UX как в квизах уровня startup funnel
+    setTimeout(() => {
+      const nextData = { ...data, [current.field]: opt };
+      setData(nextData);
+      setSelected(null);
 
-    if (step === steps.length - 1) {
-      setAnalyzing(true);
+      if (step === steps.length - 1) {
+        setAnalyzing(true);
 
-      setTimeout(() => {
-        setAnalyzing(false);
-        setDone(true);
-      }, 2400);
-    } else {
-      setStep((s) => s + 1);
-    }
+        setTimeout(() => {
+          setAnalyzing(false);
+          setDone(true);
+        }, 2000);
+      } else {
+        setStep((s) => s + 1);
+      }
+    }, 350);
   };
 
   const restart = () => {
@@ -85,18 +79,19 @@ export const CaseQuiz = () => {
   };
 
   return (
-    <section className={styles.container} id="quiz">
-      <h2 className={styles.title}>
-        Бесплатный подбор университета за 60 секунд
-      </h2>
+    <section className={styles.container}>
+      <h2 className={styles.title}>Подбор университета за 60 секунд</h2>
 
+      {/* PROGRESS */}
       {!done && !analyzing && (
         <div className={styles.progress}>
-          Шаг {step + 1} из {steps.length}
+          Шаг {step + 1} / {steps.length}
           <div className={styles.bar}>
             <div
               className={styles.fill}
-              style={{ width: `${((step + 1) / steps.length) * 100}%` }}
+              style={{
+                width: `${((step + 1) / steps.length) * 100}%`,
+              }}
             />
           </div>
         </div>
@@ -108,46 +103,66 @@ export const CaseQuiz = () => {
             <motion.div
               key={step}
               className={styles.stack}
-              initial={{ opacity: 0, x: 60, rotate: 2, scale: 0.96 }}
-              animate={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -60, rotate: -2, scale: 0.94 }}
-              transition={{ duration: 0.4 }}
+              initial={{ opacity: 0, x: 60, scale: 0.96 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -60, scale: 0.96 }}
+              transition={{ duration: 0.35 }}
             >
-              <QuizStep
-                question={current.question}
-                options={current.options}
-                selected={selected}
-                onSelect={setSelected}
-              />
+              {/* QUESTION CARD */}
+              <div className={styles.stepCard}>
+                <h3 className={styles.question}>{current.question}</h3>
 
-              <button
-                className={`${styles.nextBtn} ${selected ? styles.active : ""}`}
-                onClick={handleNext}
-              >
-                Далее →
-              </button>
+                <div className={styles.options}>
+                  {current.options.map((opt, i) => (
+                    <motion.button
+                      key={i}
+                      whileTap={{ scale: 0.97 }}
+                      onClick={() => handleSelect(opt)}
+                      className={`${styles.option} ${
+                        selected === opt ? styles.activeOption : ""
+                      }`}
+                    >
+                      {opt}
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+
+              {/* MICRO PROGRESS TEXT */}
+              <div className={styles.hint}>
+                Выбери один вариант — дальше система всё сделает сама ⚡
+              </div>
             </motion.div>
           ) : analyzing ? (
-            <motion.div className={styles.analysis}>
+            <motion.div
+              className={styles.analysis}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
               <div className={styles.loader} />
-              <h3>Анализируем профиль...</h3>
-              <p>Строим персональную стратегию поступления</p>
+              <h3>Анализируем твой профиль...</h3>
+              <p>Подбираем университеты и стратегию</p>
             </motion.div>
           ) : (
             <motion.div
               className={styles.result}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
             >
-              <h3 className={styles.resultTitle}>
-                Твоя стратегия поступления готова 🎯
-              </h3>
+              <div className={styles.heroResult}>
+                <h3 className={styles.resultTitle}>
+                  Твоя стратегия поступления готова
+                </h3>
 
-              <p className={styles.subtitle}>
-                Найдено <b>35 университетов</b> под твой профиль
-              </p>
+                <p className={styles.subtitle}>
+                  Мы нашли для тебя <b>35 университетов</b> и собрали понятный
+                  план
+                </p>
+              </div>
 
-              <div className={styles.uniTitle}>Топ-3 университетa</div>
+              <div className={styles.uniTitle}>
+                Топ-3 варианта, которые реально подходят тебе
+              </div>
 
               <div className={styles.universities}>
                 {universities.map((u, i) => (
@@ -156,16 +171,11 @@ export const CaseQuiz = () => {
 
                     <div className={styles.blurText}>
                       <div className={styles.uniContent}>
-                        {/* LOGO ВМЕСТО ФЛАГА */}
-                        <img
-                          className={styles.logo}
-                          src={u.logo}
-                          alt={u.name}
-                        />
-
                         <div>
                           <div className={styles.uniName}>{u.name}</div>
-                          <div className={styles.uniMeta}>Match 95%</div>
+                          <div className={styles.uniMeta}>
+                            Match 95% · подходит под твой профиль
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -174,7 +184,7 @@ export const CaseQuiz = () => {
               </div>
 
               <button className={styles.cta}>
-                Получить полный список университетов + разбор профиля БЕСПЛАТНО
+                Получить полный список + стратегию поступления
               </button>
 
               <button className={styles.restart} onClick={restart}>

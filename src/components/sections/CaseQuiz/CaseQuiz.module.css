@@ -1,23 +1,104 @@
 .container {
   padding: 100px 24px;
-  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== ULTRA GLOW LAYERS ===== */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -300px;
+
+  filter: blur(90px);
+  animation: neonFlow 6s ease-in-out infinite alternate;
+
+  z-index: 0;
+}
+
+/* ===== moving energy layer ===== */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(0, 170, 255, 0.15) 25%,
+    rgba(140, 0, 255, 0.12) 50%,
+    rgba(0, 255, 200, 0.12) 75%,
+    transparent 100%
+  );
+
+  animation: lightSweep 4s linear infinite;
+  mix-blend-mode: screen;
+
+  z-index: 0;
+}
+
+/* ===== noise texture (дорогой эффект) ===== */
+.containerNoise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+
+/* ===== soft vignette edges ===== */
+.container::before {
+  mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* keep UI above */
+.container > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes neonFlow {
+  0% {
+    transform: translate(-3%, -2%) scale(1);
+  }
+  50% {
+    transform: translate(3%, 2%) scale(1.15);
+  }
+  100% {
+    transform: translate(-2%, 3%) scale(1.05);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
 }
 
 .title {
   text-align: center;
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 900;
-  color: #0b3a8a;
+  color: #0b4bd6;
   margin-bottom: 20px;
 }
 
-/* PROGRESS */
+/* progress */
 .progress {
   max-width: 520px;
   margin: 0 auto 30px;
   font-size: 13px;
   font-weight: 700;
-  color: #0b3a8a;
+  color: #005eff;
 }
 
 .bar {
@@ -30,36 +111,32 @@
 
 .fill {
   height: 100%;
-  background: linear-gradient(90deg, #1f86ff, #0b4bd6);
+  background: linear-gradient(90deg, #7ebaff, #5087ff);
   transition: 0.4s;
 }
 
-/* WRAPPER */
+/* wrapper */
 .quizWrapper {
   max-width: 720px;
   margin: 0 auto;
-  perspective: 1200px;
 }
 
-/* STACK */
-.stack {
-  position: relative;
-}
-
-/* STEP */
+/* card */
 .stepCard {
   background: linear-gradient(135deg, #1f86ff, #0b4bd6);
-  padding: 40px;
-  border-radius: 24px;
+  padding: 42px;
+  border-radius: 26px;
   color: white;
+  box-shadow: 0 30px 90px rgba(0, 60, 255, 0.25);
 }
 
 .question {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 900;
   margin-bottom: 20px;
 }
 
+/* options */
 .options {
   display: flex;
   flex-direction: column;
@@ -82,34 +159,27 @@
   color: #1f86ff;
 }
 
-/* NEXT */
-.nextBtn {
-  margin-top: 14px;
-  width: 100%;
-  padding: 14px;
-  border-radius: 14px;
-  border: none;
-  background: rgba(0, 0, 0, 0.15);
-  color: white;
-  font-weight: 800;
-  opacity: 0.5;
-  cursor: not-allowed;
+.activeOption {
+  background: white;
+  color: #1f86ff;
 }
 
-.active {
-  opacity: 1;
-  background: #dbe9ff;
-  color: #0b4bd6;
-  cursor: pointer;
+/* hint */
+.hint {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 12px;
+  opacity: 0.6;
+  color: #bad3ff;
 }
 
-/* ANALYSIS */
+/* analysis */
 .analysis {
   text-align: center;
   padding: 60px;
+  border-radius: 24px;
   background: linear-gradient(135deg, #1f86ff, #0b4bd6);
   color: white;
-  border-radius: 24px;
 }
 
 .loader {
@@ -128,7 +198,7 @@
   }
 }
 
-/* RESULT */
+/* result */
 .result {
   background: linear-gradient(135deg, #1f86ff, #0b4bd6);
   padding: 50px 28px;
@@ -138,24 +208,21 @@
 }
 
 .resultTitle {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 900;
 }
 
 .subtitle {
-  margin-top: 6px;
   opacity: 0.9;
+  margin-top: 6px;
 }
 
-/* TITLE */
+/* uni */
 .uniTitle {
   margin-top: 24px;
   font-weight: 800;
-  font-size: 14px;
-  opacity: 0.95;
 }
 
-/* UNIVERSITIES */
 .universities {
   margin-top: 18px;
   display: flex;
@@ -163,69 +230,57 @@
   gap: 12px;
 }
 
-/* CARD */
 .uniCard {
   position: relative;
   padding: 16px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.12);
-  overflow: hidden;
   transition: 0.3s;
 }
 
 .uniCard:hover {
-  transform: translateY(-5px) scale(1.02);
+  transform: translateY(-6px) scale(1.02);
   background: rgba(255, 255, 255, 0.18);
 }
 
-/* LOCK */
+/* lock */
 .lockIcon {
   position: absolute;
   top: 10px;
   right: 10px;
   color: white;
-  font-size: 18px;
-  opacity: 0.9;
 }
 
-/* BLUR TEXT */
+/* blur */
 .blurText {
   filter: blur(4px);
 }
 
-/* CONTENT */
+/* content */
 .uniContent {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.flag {
-  width: 22px;
-  height: 16px;
-  border-radius: 3px;
+.logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: white;
+  object-fit: contain;
 }
 
 .uniName {
   font-weight: 900;
-  font-size: 15px;
 }
 
 .uniMeta {
   font-size: 12px;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
-.logo {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  object-fit: contain;
-  background: white;
-  padding: 2px;
-}
-
-/* CTA */
+/* cta */
 .cta {
   margin-top: 20px;
   width: 100%;
@@ -235,14 +290,9 @@
   background: white;
   color: #0b4bd6;
   font-weight: 900;
-  transition: 0.25s;
 }
 
-.cta:hover {
-  transform: translateY(-2px);
-}
-
-/* RESTART */
+/* restart */
 .restart {
   margin-top: 10px;
   width: 100%;
