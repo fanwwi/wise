@@ -1,6 +1,7 @@
 import { CaseQuiz } from "@/components/sections/CaseQuiz/CaseQuiz";
 import Compare from "@/components/sections/Compare/Compare";
 import Countries from "@/components/sections/Countries/Countries";
+import FinalQuoteBlock from "@/components/sections/FinalQuoteBlock/FinalQuoteBlock";
 import { Hero } from "@/components/sections/Hero/Hero";
 import Roadmap from "@/components/sections/Roadmap/Roadmap";
 import Stories from "@/components/sections/Stories/Stories";
@@ -23,6 +24,7 @@ export default function Home() {
       <Countries />
       <Stories />
       <CaseQuiz />
+      <FinalQuoteBlock />
     </main>
   );
 }

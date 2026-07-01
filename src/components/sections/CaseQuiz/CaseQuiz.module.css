@@ -8,23 +8,24 @@
   font-size: 42px;
   font-weight: 900;
   color: #0b3a8a;
+  margin-bottom: 20px;
 }
 
 /* PROGRESS */
 .progress {
   max-width: 520px;
-  margin: 20px auto 40px;
-  color: #0b3a8a;
+  margin: 0 auto 30px;
+  font-size: 13px;
   font-weight: 700;
-  font-size: 14px;
+  color: #0b3a8a;
 }
 
 .bar {
-  height: 8px;
+  height: 7px;
   background: #eaf2ff;
   border-radius: 999px;
-  margin-top: 10px;
   overflow: hidden;
+  margin-top: 8px;
 }
 
 .fill {
@@ -40,18 +41,17 @@
   perspective: 1200px;
 }
 
-/* STACK EFFECT */
+/* STACK */
 .stack {
   position: relative;
 }
 
-/* STEP CARD */
+/* STEP */
 .stepCard {
   background: linear-gradient(135deg, #1f86ff, #0b4bd6);
   padding: 40px;
   border-radius: 24px;
   color: white;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
 }
 
 .question {
@@ -82,14 +82,9 @@
   color: #1f86ff;
 }
 
-.activeOption {
-  background: rgb(255, 255, 255);
-  color: #1f86ff;
-}
-
-/* NEXT BUTTON */
+/* NEXT */
 .nextBtn {
-  margin-top: 16px;
+  margin-top: 14px;
   width: 100%;
   padding: 14px;
   border-radius: 14px;
@@ -97,15 +92,15 @@
   background: rgba(0, 0, 0, 0.15);
   color: white;
   font-weight: 800;
-  cursor: not-allowed;
   opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .active {
-  background: rgb(188, 211, 255);
+  opacity: 1;
+  background: #dbe9ff;
   color: #0b4bd6;
   cursor: pointer;
-  opacity: 1;
 }
 
 /* ANALYSIS */
@@ -120,9 +115,9 @@
 .loader {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-top: 3px solid white;
-  border-radius: 50%;
   margin: 0 auto 20px;
   animation: spin 1s linear infinite;
 }
@@ -136,84 +131,79 @@
 /* RESULT */
 .result {
   background: linear-gradient(135deg, #1f86ff, #0b4bd6);
-  padding: 50px 30px;
+  padding: 50px 28px;
   border-radius: 26px;
   color: white;
   text-align: center;
 }
 
-.resultHeader h3 {
-  font-size: 28px;
+.resultTitle {
+  font-size: 26px;
   font-weight: 900;
 }
 
-.uniBlockTitle {
-  margin-top: 20px;
+.subtitle {
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+/* TITLE */
+.uniTitle {
+  margin-top: 24px;
   font-weight: 800;
+  font-size: 14px;
+  opacity: 0.95;
 }
 
 /* UNIVERSITIES */
 .universities {
-  margin-top: 20px;
+  margin-top: 18px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
+/* CARD */
 .uniCard {
   position: relative;
-  padding: 18px;
+  padding: 16px;
   border-radius: 16px;
-
   background: rgba(255, 255, 255, 0.12);
   overflow: hidden;
+  transition: 0.3s;
 }
 
-/* 🔒 LOCK — всегда поверх */
+.uniCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* LOCK */
 .lockIcon {
   position: absolute;
   top: 10px;
   right: 10px;
-
-  color: #ffffff;
-  font-size: 18px;
-
-  z-index: 10; /* ключевой момент */
-  opacity: 0.95;
-
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
-}
-
-/* 🔥 BLUR ТОЛЬКО ДЛЯ ТЕКСТА */
-.blurText {
-  filter: blur(5px);
-  transition: 0.45s ease;
-}
-
-/* hover: раскрытие */
-/* smooth premium hover for uniCard */
-.uniCard {
-  transition:
-    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-    background 0.35s ease;
-  will-change: transform;
-}
-
-/* hover effect */
-.uniCard:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-}
-
-/* optional: чуть “дороже” ощущение через glow */
-.uniCard:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-/* content */
-.uniContent {
   color: white;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* BLUR TEXT */
+.blurText {
+  filter: blur(4px);
+}
+
+/* CONTENT */
+.uniContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flag {
+  width: 22px;
+  height: 16px;
+  border-radius: 3px;
 }
 
 .uniName {
@@ -226,46 +216,39 @@
   opacity: 0.85;
 }
 
+.logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: white;
+  padding: 2px;
+}
+
 /* CTA */
-/* CTA — smooth premium hover WITHOUT shadow */
 .cta {
   margin-top: 20px;
   width: 100%;
   padding: 14px;
   border-radius: 14px;
   border: none;
-
   background: white;
   color: #0b4bd6;
-
   font-weight: 900;
-  cursor: pointer;
-
-  transition:
-    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
-    background 0.3s ease,
-    color 0.3s ease;
-  will-change: transform;
+  transition: 0.25s;
 }
 
 .cta:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: #eaf2ff;
-  color: #083a9c;
-}
-
-.cta:active {
-  transform: translateY(-1px) scale(0.99);
+  transform: translateY(-2px);
 }
 
 /* RESTART */
 .restart {
   margin-top: 10px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: white;
+  width: 100%;
   padding: 10px;
   border-radius: 12px;
-  width: 100%;
-  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: white;
 }

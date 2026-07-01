@@ -35,9 +35,18 @@ const steps = [
 ];
 
 const universities = [
-  "Bellevue College",
-  "Northeastern University",
-  "University of Colorado",
+  {
+    name: "Bellevue College",
+    logo: "/images/bellevue.jpg",
+  },
+  {
+    name: "Northeastern University",
+    logo: "/images/northeastern.png",
+  },
+  {
+    name: "University of Colorado",
+    logo: "/images/colorado.png",
+  },
 ];
 
 export const CaseQuiz = () => {
@@ -49,14 +58,10 @@ export const CaseQuiz = () => {
 
   const current = steps[step];
 
-  const handleSelect = (opt) => {
-    setSelected(opt);
-  };
-
   const handleNext = () => {
     if (!selected) return;
 
-    setData((prev) => ({ ...prev, [current.field]: selected }));
+    setData((p) => ({ ...p, [current.field]: selected }));
     setSelected(null);
 
     if (step === steps.length - 1) {
@@ -65,7 +70,7 @@ export const CaseQuiz = () => {
       setTimeout(() => {
         setAnalyzing(false);
         setDone(true);
-      }, 2200);
+      }, 2400);
     } else {
       setStep((s) => s + 1);
     }
@@ -80,16 +85,14 @@ export const CaseQuiz = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="quiz">
       <h2 className={styles.title}>
-        Узнай, куда ты можешь поступить — бесплатно
+        Бесплатный подбор университета за 60 секунд
       </h2>
 
       {!done && !analyzing && (
         <div className={styles.progress}>
-          <span>
-            Шаг {step + 1} из {steps.length}
-          </span>
+          Шаг {step + 1} из {steps.length}
           <div className={styles.bar}>
             <div
               className={styles.fill}
@@ -114,7 +117,7 @@ export const CaseQuiz = () => {
                 question={current.question}
                 options={current.options}
                 selected={selected}
-                onSelect={handleSelect}
+                onSelect={setSelected}
               />
 
               <button
@@ -125,41 +128,45 @@ export const CaseQuiz = () => {
               </button>
             </motion.div>
           ) : analyzing ? (
-            <motion.div
-              className={styles.analysis}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
+            <motion.div className={styles.analysis}>
               <div className={styles.loader} />
-              <h3>Анализируем твой профиль...</h3>
-              <p>Подбираем университеты и стратегию поступления</p>
+              <h3>Анализируем профиль...</h3>
+              <p>Строим персональную стратегию поступления</p>
             </motion.div>
           ) : (
             <motion.div
               className={styles.result}
-              initial={{ opacity: 0, scale: 0.96 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
             >
-              <div className={styles.resultHeader}>
-                <h3>Университет твоей мечты! 🎉</h3>
-                <p>
-                  По твоему профилю найдено <b>35 университетов</b>
-                </p>
-              </div>
+              <h3 className={styles.resultTitle}>
+                Твоя стратегия поступления готова 🎯
+              </h3>
 
-              <div className={styles.uniBlockTitle}>Топ-3 варианта</div>
+              <p className={styles.subtitle}>
+                Найдено <b>35 университетов</b> под твой профиль
+              </p>
+
+              <div className={styles.uniTitle}>Топ-3 университетa</div>
 
               <div className={styles.universities}>
                 {universities.map((u, i) => (
-                  <div key={i} className={styles.uniCard}>
-                    {/* lock — отдельный слой, НЕ под blur */}
+                  <div className={styles.uniCard} key={i}>
                     <FaLock className={styles.lockIcon} />
 
-                    {/* blur только на текст */}
                     <div className={styles.blurText}>
                       <div className={styles.uniContent}>
-                        <div className={styles.uniName}>{u}</div>
-                        <div className={styles.uniMeta}>Match 95%</div>
+                        {/* LOGO ВМЕСТО ФЛАГА */}
+                        <img
+                          className={styles.logo}
+                          src={u.logo}
+                          alt={u.name}
+                        />
+
+                        <div>
+                          <div className={styles.uniName}>{u.name}</div>
+                          <div className={styles.uniMeta}>Match 95%</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -167,7 +174,7 @@ export const CaseQuiz = () => {
               </div>
 
               <button className={styles.cta}>
-                Получить полный список + разбор кейса БЕСПЛАТНО
+                Получить полный список университетов + разбор профиля БЕСПЛАТНО
               </button>
 
               <button className={styles.restart} onClick={restart}>
