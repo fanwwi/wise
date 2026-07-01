@@ -61,8 +61,10 @@ const stories = [
 
 export default function Stories() {
   return (
-    <section className={styles.section}>
-      <h2 className={styles.title}>Истории наших студентов</h2>
+    <section className={styles.section} id="results">
+      <h2 className={styles.title}>
+        Истории студентов, которые изменили своё будущее
+      </h2>
 
       <div className={styles.scroll}>
         {stories.map((s, i) => (

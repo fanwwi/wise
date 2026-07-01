@@ -12,8 +12,8 @@
 /* NAV — FULL WIDTH PREMIUM LAYOUT */
 .nav {
   all: unset;
-max-width: 900px;
-margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +60,7 @@ margin: 0 auto;
 }
 
 .logoA {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .scrolled .logo {

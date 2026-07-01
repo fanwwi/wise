@@ -1,6 +1,6 @@
 .container {
   padding: 100px 24px;
-  background: #fff;
+  background: #ffffff;
 }
 
 .title {
@@ -8,30 +8,55 @@
   font-size: 42px;
   font-weight: 900;
   color: #0b3a8a;
-  margin-bottom: 50px;
 }
 
+/* PROGRESS */
+.progress {
+  max-width: 520px;
+  margin: 20px auto 40px;
+  color: #0b3a8a;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.bar {
+  height: 8px;
+  background: #eaf2ff;
+  border-radius: 999px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1f86ff, #0b4bd6);
+  transition: 0.4s;
+}
+
+/* WRAPPER */
 .quizWrapper {
   max-width: 720px;
   margin: 0 auto;
   perspective: 1200px;
 }
 
-.motionCard {
-  transform-style: preserve-3d;
+/* STACK EFFECT */
+.stack {
+  position: relative;
 }
 
-/* STEP */
+/* STEP CARD */
 .stepCard {
-  background: #1f86ff;
+  background: linear-gradient(135deg, #1f86ff, #0b4bd6);
   padding: 40px;
   border-radius: 24px;
   color: white;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
 }
 
 .question {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 900;
   margin-bottom: 20px;
 }
 
@@ -43,18 +68,69 @@
 
 .option {
   padding: 14px;
-  border: none;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
   color: white;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
 .option:hover {
-  background: #fff;
+  background: white;
   color: #1f86ff;
+}
+
+.activeOption {
+  background: rgb(255, 255, 255);
+  color: #1f86ff;
+}
+
+/* NEXT BUTTON */
+.nextBtn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0, 0, 0, 0.15);
+  color: white;
+  font-weight: 800;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.active {
+  background: rgb(188, 211, 255);
+  color: #0b4bd6;
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* ANALYSIS */
+.analysis {
+  text-align: center;
+  padding: 60px;
+  background: linear-gradient(135deg, #1f86ff, #0b4bd6);
+  color: white;
+  border-radius: 24px;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* RESULT */
@@ -66,125 +142,130 @@
   text-align: center;
 }
 
-/* HEADER */
 .resultHeader h3 {
   font-size: 28px;
   font-weight: 900;
-  margin-bottom: 8px;
 }
 
-.subtitle {
-  font-size: 15px;
-  opacity: 0.9;
-}
-
-/* TITLE */
-.blockTitle {
-  margin-top: 25px;
+.uniBlockTitle {
+  margin-top: 20px;
   font-weight: 800;
 }
 
-/* LIST */
+/* UNIVERSITIES */
 .universities {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin: 20px 0;
+  gap: 12px;
 }
 
-/* CARD */
 .uniCard {
   position: relative;
   padding: 18px;
   border-radius: 16px;
-  overflow: hidden;
 
   background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-
-  transition: transform 0.25s ease;
+  overflow: hidden;
 }
 
-.uniCard:hover {
-  transform: translateY(-3px);
-}
-
-/* 🔥 MAIN OVERLAY (FIXED — NO TEXT LEAK) */
-.lockOverlay {
-  position: absolute;
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.82); /* плотный */
-  backdrop-filter: blur(2px);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 6px;
-
-  z-index: 10;
-}
-
-.uniCard:hover .lockOverlay {
-  background: rgba(0, 0, 0, 0.88);
-}
-
+/* 🔒 LOCK — всегда поверх */
 .lockIcon {
-  font-size: 22px;
-  animation: pulseLock 1.8s ease-in-out infinite;
-}
+  position: absolute;
+  top: 10px;
+  right: 10px;
 
-.lockOverlay span {
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
+  color: #ffffff;
+  font-size: 18px;
+
+  z-index: 10; /* ключевой момент */
   opacity: 0.95;
+
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
 }
 
-/* CONTENT */
+/* 🔥 BLUR ТОЛЬКО ДЛЯ ТЕКСТА */
+.blurText {
+  filter: blur(5px);
+  transition: 0.45s ease;
+}
+
+/* hover: раскрытие */
+/* smooth premium hover for uniCard */
+.uniCard {
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.35s ease;
+  will-change: transform;
+}
+
+/* hover effect */
+.uniCard:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* optional: чуть “дороже” ощущение через glow */
+.uniCard:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* content */
 .uniContent {
-  position: relative;
-  z-index: 2;
   color: white;
 }
 
 .uniName {
   font-weight: 900;
   font-size: 15px;
-  color: #c8c8c8;
 }
 
 .uniMeta {
   font-size: 12px;
   opacity: 0.85;
-  margin-top: 4px;
 }
 
 /* CTA */
+/* CTA — smooth premium hover WITHOUT shadow */
 .cta {
   margin-top: 20px;
-  padding: 14px 18px;
-
-  border: none;
+  width: 100%;
+  padding: 14px;
   border-radius: 14px;
+  border: none;
 
   background: white;
   color: #0b4bd6;
 
   font-weight: 900;
   cursor: pointer;
-  transition: 0.25s ease;
+
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
 }
 
 .cta:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
+  background: #eaf2ff;
+  color: #083a9c;
 }
 
-/* ANIMATION */
-@keyframes pulseLock {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.15); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
+.cta:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* RESTART */
+.restart {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
 }

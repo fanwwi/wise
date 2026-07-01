@@ -44,7 +44,7 @@ export const Header = () => {
           <a href="#countries">Страны</a>
           <a href="#results">Истории</a>
           <a href="#quiz">Подбор вуза</a>
-          <a href="#faq">Вопросы</a>
+          <a href="#contacts">Связаться с нами</a>
         </div>
 
         <button className={styles.cta}>Получить консультацию</button>

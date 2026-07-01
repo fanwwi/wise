@@ -1,7 +1,8 @@
 "use client";
+
 import styles from "./CaseQuiz.module.css";
 
-export const QuizStep = ({ question, options, field, onNext }) => {
+export const QuizStep = ({ question, options, selected, onSelect }) => {
   return (
     <div className={styles.stepCard}>
       <h3 className={styles.question}>{question}</h3>
@@ -10,8 +11,10 @@ export const QuizStep = ({ question, options, field, onNext }) => {
         {options.map((opt, i) => (
           <button
             key={i}
-            className={styles.option}
-            onClick={() => onNext(field, opt)}
+            className={`${styles.option} ${
+              selected === opt ? styles.activeOption : ""
+            }`}
+            onClick={() => onSelect(opt)}
           >
             {opt}
           </button>
