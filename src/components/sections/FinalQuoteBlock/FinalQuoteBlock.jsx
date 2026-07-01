@@ -7,73 +7,53 @@ export default function FinalQuoteBlock() {
   return (
     <motion.section
       className={styles.wrapper}
-      initial={{ opacity: 0, y: 90, scale: 0.9 }}
+      initial={{ opacity: 0, y: 80, scale: 0.92 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.35 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
     >
-      {/* ENERGY BACKGROUND */}
-      <motion.div
-        className={styles.energy1}
-        animate={{ x: [0, 40, 0], y: [0, -30, 0], scale: [1, 1.25, 1] }}
-        transition={{ duration: 6, repeat: Infinity }}
-      />
-
-      <motion.div
-        className={styles.energy2}
-        animate={{ x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.3, 1] }}
-        transition={{ duration: 7, repeat: Infinity }}
-      />
-
-      <motion.div
-        className={styles.energy3}
-        animate={{ rotate: [0, 180, 360] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-      />
+      {/* aggressive background layers */}
+      <div className={styles.flash1} />
+      <div className={styles.flash2} />
+      <div className={styles.gridGlow} />
 
       {/* CARD */}
-      <motion.div
-        className={styles.card}
-        whileHover={{ scale: 1.03, rotateX: 6, rotateY: -6 }}
-        transition={{ type: "spring", stiffness: 120 }}
-      >
-        {/* neon top line */}
+      <motion.div className={styles.card} whileHover={{ scale: 1.03 }}>
+        {/* pulse ring */}
         <motion.div
-          className={styles.topGlow}
-          animate={{
-            opacity: [0.4, 1, 0.4],
-            scaleX: [0.7, 1.2, 0.7],
-          }}
+          className={styles.pulseRing}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
           transition={{ duration: 3, repeat: Infinity }}
         />
 
-        {/* quote */}
         <motion.div
-          className={styles.quote}
-          animate={{ y: [0, -10, 0], rotate: [-4, 4, -4] }}
-          transition={{ duration: 5, repeat: Infinity }}
+          className={styles.badge}
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
         >
-          “
+          ⚡ ТВОЙ СЛЕДУЮЩИЙ ШАГ
         </motion.div>
 
-        <h2 className={styles.title}>Не знаешь, с чего начать?</h2>
+        <h2 className={styles.title}>Не откладывай поступление ещё на год</h2>
 
         <p className={styles.text}>
-          Даже если сейчас всё кажется хаосом — это нормально.
+          Мы не просто покажем университеты — мы соберём тебе стратегию
+          поступления, которая реально работает.
           <br />
-          Мы разберём твою ситуацию и соберём чёткий план поступления: страна,
-          университет и стратегия.
+          Ты либо начинаешь сейчас, либо теряешь время.
         </p>
 
         <motion.button
           className={styles.cta}
-          whileHover={{
-            scale: 1.08,
-          }}
+          whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.96 }}
         >
-          Получить бесплатную консультацию
+          Получить бесплатный разбор сейчас
         </motion.button>
+
+        <div className={styles.micro}>
+          ⏳ Начни уже сегодня - вместе с WISE
+        </div>
       </motion.div>
     </motion.section>
   );
