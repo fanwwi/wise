@@ -1,100 +1,150 @@
 .section {
-  padding: 100px 24px;
-  background: #f6f9ff;
+  padding: 140px 24px;
+  background: radial-gradient(circle at top, #0045ce, #333f76);
+  overflow: hidden;
 }
 
 .title {
   text-align: center;
-  font-size: 38px;
-  font-weight: 800;
-  color: #0b3a8f;
-  margin-bottom: 50px;
+  font-size: 42px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 70px;
+  letter-spacing: -0.5px;
 }
 
 /* WRAPPER */
 .wrapper {
   display: flex;
-  gap: 24px;
   justify-content: center;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
-/* CARD */
+/* BASE CARD */
 .card {
-  width: 420px;
+  width: 440px;
+  padding: 30px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
 
-  background: linear-gradient(135deg, #0b63ff, #1f86ff);
-  border-radius: 22px;
-
-  padding: 22px;
-
-  box-shadow: 0 20px 60px rgba(0, 90, 255, 0.25);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: 0.35s ease;
+  transform-style: preserve-3d;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 80px rgba(0, 90, 255, 0.35);
+/* =========================
+   BAD CARD (DIM / GRAY)
+========================= */
+.bad {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  filter: grayscale(0.6);
+}
+
+.bad:hover {
+  transform: translateY(-6px) scale(0.98);
+}
+
+/* =========================
+   GOOD CARD (HERO / NEON)
+========================= */
+.good {
+  background: linear-gradient(135deg, #0b63ff, #1f86ff, #00e5ff);
+  box-shadow:
+    0 40px 120px rgba(0, 140, 255, 0.35),
+    0 0 80px rgba(0, 229, 255, 0.15);
+
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+/* glow ring behind */
+.glowRing {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.35), transparent 60%);
+  filter: blur(30px);
+  z-index: 0;
+}
+
+/* LABEL */
+.label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
 }
 
 /* TITLE */
 .cardTitle {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 18px;
   color: white;
-  margin-bottom: 16px;
-  text-align: center;
 }
 
 /* LIST */
 .list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 0;
-  margin: 0;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
 }
 
 /* ITEM */
 .item {
   display: flex;
-  align-items: flex-start;
   gap: 10px;
-
-  padding: 12px 14px;
+  padding: 14px;
   border-radius: 14px;
-
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-
-  color: #eaf3ff;
   font-size: 15px;
   line-height: 1.5;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
+  transition: 0.25s ease;
 }
 
-.item:hover {
-  transform: translateX(4px);
+/* BAD ITEM */
+.bad .item {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* GOOD ITEM */
+.good .item {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.good .item:hover {
+  transform: translateX(6px);
   background: rgba(255, 255, 255, 0.18);
 }
 
 /* ICONS */
 .iconGood {
-  color: #00ffcc;
+  color: #00ffd5;
   font-size: 18px;
-  margin-top: 2px;
-  flex-shrink: 0;
 }
 
 .iconBad {
-  color: #ff5a7a;
+  color: #6b7280;
   font-size: 18px;
-  margin-top: 2px;
-  flex-shrink: 0;
+}
+
+/* subtle float animation */
+.good {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1.08);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.09);
+  }
 }

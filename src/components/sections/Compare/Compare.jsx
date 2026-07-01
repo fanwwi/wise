@@ -6,80 +6,77 @@ import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 export default function Compare() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Почему WISE меняет результат поступления</h2>
+      <h2 className={styles.title}>Разница, которая реально влияет на оффер</h2>
 
       <div className={styles.wrapper}>
-        {/* WISE */}
-        <div className={styles.card}>
-          <h3 className={styles.cardTitle}>Поступать с WISE</h3>
+        {/* WITHOUT WISE */}
+        <div className={`${styles.card} ${styles.bad}`}>
+          <div className={styles.label}>Без стратегии</div>
+
+          <h3 className={styles.cardTitle}>Обычная подача</h3>
 
           <ul className={styles.list}>
             <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Помогаем определить твои сильные стороны, интересы и реальный
-              потенциал
+              <FaTimesCircle className={styles.iconBad} />
+              Делаешь всё “наугад” — оценки, курсы, активности без системы
             </li>
 
             <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Формируем твою уникальную историю для университетов, а не просто
-              список достижений
+              <FaTimesCircle className={styles.iconBad} />
+              Подаёшься как все: одинаковые тексты, одинаковые заявки
             </li>
 
             <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Показываем приёмной комиссии, кто ты как личность, а не только как
-              “оценки и тесты”
+              <FaTimesCircle className={styles.iconBad} />
+              Твоя история теряется среди других кандидатов
             </li>
 
             <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Собираем стратегию поступления вокруг твоих целей, характера и
-              амбиций
+              <FaTimesCircle className={styles.iconBad} />
+              Не понимаешь, что реально важно для поступления
             </li>
 
             <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Упаковываем твой профиль так, чтобы он выделялся среди тысяч
-              кандидатов
+              <FaTimesCircle className={styles.iconBad} />
+              Нет стратегии — просто набор действий без результата
             </li>
           </ul>
         </div>
 
-        {/* WITHOUT WISE */}
-        <div className={styles.card}>
-          <h3 className={styles.cardTitle}>Поступать без WISE</h3>
+        {/* WITH WISE */}
+        <div className={`${styles.card} ${styles.good}`}>
+          <div className={styles.glowRing}></div>
+
+          <div className={styles.label}>WISE ADMISSION SYSTEM</div>
+
+          <h3 className={styles.cardTitle}>Стратегическая подача</h3>
 
           <ul className={styles.list}>
             <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Фокус только на оценках без понимания личности
+              <FaCheckCircle className={styles.iconGood} />
+              Помогаем понять, в чём ты реально силён, а не “в чём вроде норм”
             </li>
 
             <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Подача “как у всех” без уникального позиционирования
+              <FaCheckCircle className={styles.iconGood} />
+              Собираем твою личную историю, а не просто список оценок и курсов
             </li>
 
             <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Слабая история кандидата для комиссии
+              <FaCheckCircle className={styles.iconGood} />
+              Показываем университетам, кто ты есть на самом деле, а не только
+              баллы
             </li>
 
             <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Потеря сильных сторон в процессе подачи
+              <FaCheckCircle className={styles.iconGood} />
+              Строим чёткий план поступления под твою цель, а не “куда
+              получится”
             </li>
 
             <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Отсутствие стратегии, которая ведёт к офферу
-            </li>
-
-            <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Сильные стороны кандидата не раскрываются в заявке и остаются
-              “невидимыми” для комиссии
+              <FaCheckCircle className={styles.iconGood} />
+              Упаковываем профиль так, чтобы ты выделялся среди тысяч заявок
             </li>
           </ul>
         </div>
