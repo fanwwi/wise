@@ -134,7 +134,14 @@ export default function Countries() {
 
                 <div className={styles.bottom}>
                   <span className={styles.price}>от {c.price}</span>
-                  <button className={styles.more}>Получить план поступления</button>
+                  <a
+                    className={styles.more}
+                    href={`https://wa.me/996504070414?text=Здравствуйте!%20Хочу%20получить%20план%20поступления%20в%20${encodeURIComponent(c.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Получить план поступления
+                  </a>
                 </div>
               </div>
             </div>

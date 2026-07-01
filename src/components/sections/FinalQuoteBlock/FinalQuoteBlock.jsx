@@ -43,17 +43,18 @@ export default function FinalQuoteBlock() {
           Ты либо начинаешь сейчас, либо теряешь время.
         </p>
 
-        <motion.button
+        <motion.a
           className={styles.cta}
+          href="https://wa.me/996504070414?text=Здравствуйте!%20Хочу%20получить%20бесплатный%20разбор%20профиля%20сейчас"
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.96 }}
         >
           Получить бесплатный разбор сейчас
-        </motion.button>
+        </motion.a>
 
-        <div className={styles.micro}>
-          ⏳ Начни уже сегодня - вместе с WISE
-        </div>
+        <div className={styles.micro}>⏳ Начни уже сегодня - вместе с WISE</div>
       </motion.div>
     </motion.section>
   );

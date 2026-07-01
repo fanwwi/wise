@@ -41,6 +41,14 @@
   transform: scale(1.1);
 }
 
+.more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
 /* CAROUSEL */
 .carousel {
   display: flex;

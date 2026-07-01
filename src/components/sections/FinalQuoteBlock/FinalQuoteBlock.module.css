@@ -131,6 +131,13 @@
   cursor: pointer;
 }
 
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 /* micro urgency text */
 .micro {
   margin-top: 14px;

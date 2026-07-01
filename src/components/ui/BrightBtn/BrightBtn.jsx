@@ -2,11 +2,16 @@
 
 import styles from "./BrightBtn.module.css";
 
-export default function BrightBtn({ children, onClick }) {
+export default function BrightBtn({ children, href }) {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <a
+      className={styles.button}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span className={styles.text}>{children}</span>
       <span className={styles.shine} />
-    </button>
+    </a>
   );
 }

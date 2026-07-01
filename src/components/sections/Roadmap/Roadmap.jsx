@@ -1,7 +1,5 @@
-"use client";
-
+import BrightBtn from "../../ui/BrightBtn/BrightBtn";
 import styles from "./Roadmap.module.css";
-import BlueButton from "../../ui/BrightBtn/BrightBtn"
 
 export default function Roadmap() {
   return (
@@ -17,7 +15,9 @@ export default function Roadmap() {
           />
         </div>
 
-        <BlueButton>Начать с бесплатной консультации</BlueButton>
+        <BrightBtn href="https://wa.me/996504070414?text=Здравствуйте!%20Хочу%20начать%20бесплатную%20консультацию%20по%20поступлению">
+          Начать с бесплатной консультации
+        </BrightBtn>
       </div>
     </section>
   );

@@ -183,9 +183,14 @@ export const CaseQuiz = () => {
                 ))}
               </div>
 
-              <button className={styles.cta}>
+              <a
+                className={styles.cta}
+                href="https://wa.me/996504070414?text=Здравствуйте!%20Хочу%20получить%20полный%20список%20университетов%20и%20стратегию%20поступления"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Получить полный список + стратегию поступления
-              </button>
+              </a>
 
               <button className={styles.restart} onClick={restart}>
                 Начать заново

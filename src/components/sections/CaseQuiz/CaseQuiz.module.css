@@ -170,7 +170,7 @@
   margin-top: 12px;
   font-size: 12px;
   opacity: 0.6;
-  color: #bad3ff;
+  color: #00286e;
 }
 
 /* analysis */
@@ -292,6 +292,17 @@
   font-weight: 900;
 }
 
+.cta:hover {
+  cursor: pointer;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 /* restart */
 .restart {
   margin-top: 10px;
@@ -301,4 +312,8 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: transparent;
   color: white;
+}
+
+.restart:hover {
+  cursor: pointer;
 }

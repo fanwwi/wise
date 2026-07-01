@@ -47,7 +47,14 @@ export const Header = () => {
           <a href="#contacts">Связаться с нами</a>
         </div>
 
-        <button className={styles.cta}>Получить консультацию</button>
+        <a
+          className={styles.cta}
+          href="https://wa.me/996504070414?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20поступлению"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Получить консультацию
+        </a>
       </nav>
     </motion.header>
   );
