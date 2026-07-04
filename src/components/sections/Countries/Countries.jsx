@@ -102,9 +102,7 @@ export default function Countries() {
 
   return (
     <section className={styles.section} id="countries">
-      <h2 className={styles.title}>
-        Глобальные возможности для твоего будущего
-      </h2>
+      <h2 className={styles.title}>Твоя страна. Твоя стратегия. Твой оффер.</h2>
 
       <div className={styles.wrapper}>
         <button className={styles.btn} onClick={() => scroll("left")}>
@@ -112,9 +110,9 @@ export default function Countries() {
         </button>
 
         <div className={styles.carousel} ref={ref}>
-          {countries.map((c, i) => (
+          {[...countries, ...countries].map((c, i) => (
             <div key={i} className={styles.card}>
-              {/* TOP IMAGE */}
+              {/* IMAGE SECTION */}
               <div className={styles.imageBox}>
                 <img src={c.image} className={styles.image} />
 
@@ -126,21 +124,31 @@ export default function Countries() {
                 </div>
               </div>
 
-              {/* BOTTOM WHITE PANEL */}
+              {/* INFO */}
               <div className={styles.info}>
                 <p className={styles.desc}>{c.desc}</p>
 
-                <div className={styles.factors}>{c.factors}</div>
+                {/* HIGHLIGHT LINE (new trust element) */}
+                <div className={styles.factors}>
+                  <span>•</span> {c.factors}
+                </div>
 
+                {/* PRICE + CTA */}
                 <div className={styles.bottom}>
-                  <span className={styles.price}>от {c.price}</span>
+                  <div className={styles.priceBox}>
+                    <span className={styles.priceLabel}>from</span>
+                    <span className={styles.price}>{c.price}</span>
+                  </div>
+
                   <a
                     className={styles.more}
-                    href={`https://wa.me/996504070414?text=Здравствуйте!%20Хочу%20получить%20план%20поступления%20в%20${encodeURIComponent(c.name)}`}
+                    href={`https://wa.me/996504070414?text=Здравствуйте!%20Хочу%20получить%20план%20поступления%20в%20${encodeURIComponent(
+                      c.name,
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Получить план поступления
+                    Получить стратегию →
                   </a>
                 </div>
               </div>

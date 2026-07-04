@@ -56,7 +56,7 @@ export default function Roadmap() {
 
         <div className={styles.cta}>
           <BrightBtn href="https://wa.me/996504070414">
-            Получить стратегию поступления
+            Получить персональную стратегию поступления
           </BrightBtn>
         </div>
       </div>

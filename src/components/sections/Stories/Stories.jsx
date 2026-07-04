@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./Stories.module.css";
+import { FaPlay } from "react-icons/fa";
 
 const stories = [
   {
@@ -9,7 +10,7 @@ const stories = [
     country: "USA",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу бесплатно",
+    hook: "Поступил на летнюю программу БЕСПЛАТНО",
     highlight: "БЕСПЛАТНО",
   },
   {
@@ -18,7 +19,7 @@ const stories = [
     country: "Canada",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу бесплатно",
+    hook: "Поступил на летнюю программу БЕСПЛАТНО",
     highlight: "БЕСПЛАТНО",
   },
   {
@@ -27,78 +28,56 @@ const stories = [
     country: "Germany",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу бесплатно",
-    highlight: "БЕСПЛАТНО",
-  },
-  {
-    name: "Арман В",
-    grant: "$95,000",
-    country: "USA",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу бесплатно",
-    highlight: "БЕСПЛАТНО",
-  },
-  {
-    name: "Адинай И",
-    grant: "$70,000",
-    country: "Italy",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу бесплатно",
-    highlight: "БЕСПЛАТНО",
-  },
-  {
-    name: "Дамир А",
-    grant: "$110,000",
-    country: "Korea",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу бесплатно",
+    hook: "Поступил на летнюю программу БЕСПЛАТНО",
     highlight: "БЕСПЛАТНО",
   },
 ];
 
 export default function Stories() {
+  const loop = [...stories, ...stories]; // 🔥 ключ к бесконечности
+
   return (
-    <section className={styles.section} id="results">
-      <h2 className={styles.title}>
-        Истории студентов, которые изменили своё будущее
-      </h2>
+    <section className={styles.section}>
+      <h2 className={styles.title}>Истории, которые меняют жизнь</h2>
 
-      <div className={styles.scroll}>
-        {stories.map((s, i) => (
-          <div key={i} className={styles.card}>
-            <div className={styles.imageBox}>
-              <img src={s.image} className={styles.image} />
+      <div className={styles.viewport}>
+        <div className={styles.track}>
+          {loop.map((s, i) => (
+            <div key={i} className={styles.card}>
+              <div className={styles.imageBox}>
+                <img src={s.image} className={styles.image} />
 
-              <div className={styles.overlay}>
-                <h3 className={styles.hook}>
-                  {s.hook.split(" ").map((word, idx) => (
-                    <span
-                      key={idx}
-                      className={
-                        word.toUpperCase() === s.highlight
-                          ? styles.highlight
-                          : ""
-                      }
-                    >
-                      {word}{" "}
-                    </span>
-                  ))}
-                </h3>
+                <div className={styles.badge}>История</div>
+
+                <div className={styles.playBtn}>
+                  <FaPlay className={styles.playIcon} />
+                </div>
+
+                <div className={styles.overlay}>
+                  <h3 className={styles.hook}>
+                    {s.hook.split(" ").map((w, idx) => (
+                      <span
+                        key={idx}
+                        className={w === s.highlight ? styles.highlight : ""}
+                      >
+                        {w}{" "}
+                      </span>
+                    ))}
+                  </h3>
+                </div>
+              </div>
+
+              <div className={styles.info}>
+                <div className={styles.nameRow}>
+                  <h3 className={styles.name}>{s.name}</h3>
+                  <span className={styles.grant}>{s.grant}</span>
+                </div>
+
+                <div className={styles.country}>{s.country}</div>
               </div>
             </div>
-
-            <div className={styles.info}>
-              <h3 className={styles.name}>{s.name}</h3>
-              <p className={styles.grant}>Сумма гранта: {s.grant}</p>
-              <p className={styles.country}>{s.country}</p>
-
-              <button className={styles.btn}>Посмотреть интервью</button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
