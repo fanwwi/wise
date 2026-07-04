@@ -8,7 +8,7 @@
 
   overflow: hidden;
 
-  background: #050608;
+  background: #0046d3;
   padding: 80px;
 }
 
@@ -157,7 +157,7 @@
 
 /* ACCENT */
 .accent {
-  background: linear-gradient(90deg, #3aa0ff, #00c2ff);
+  background: linear-gradient(90deg, #44ddff, #73bbff, #44ddff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -275,4 +275,82 @@
   color: rgba(255, 255, 255, 0.7);
 
   line-height: 1.4;
+}
+
+.arrow {
+  margin-left: 10px;
+  transition: transform 0.25s ease;
+}
+
+.secondaryCta:hover .arrow {
+  transform: translateX(6px);
+}
+
+.secondaryCta {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 28px;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  border: 1.5px solid rgba(0, 194, 255, 0.7);
+
+  color: #eaf6ff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+
+  transition: all 0.3s ease;
+
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hover — лёгкое заполнение */
+.secondaryCta:hover {
+  transform: translateY(-3px) scale(1.03);
+
+  background: rgba(0, 194, 255, 0.08);
+
+  border-color: rgba(0, 194, 255, 1);
+
+  box-shadow:
+    0 15px 50px rgba(0, 140, 255, 0.25),
+    0 0 30px rgba(0, 194, 255, 0.2);
+}
+
+/* shine эффект оставляем */
+.secondaryCta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0, 194, 255, 0.18),
+    transparent
+  );
+
+  transition: 0.7s;
+}
+
+.secondaryCta:hover::before {
+  left: 120%;
 }

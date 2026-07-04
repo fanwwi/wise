@@ -40,10 +40,10 @@ export const Hero = () => {
           transition={{ delay: 0.3 }}
           className={styles.subtitle}
         >
-          В WISE programs мы помогаем школьникам из Кыргызстана, Казахстана и стран СНГ
-          найти университет, который соответствует их целям, раскрыть свой
-          потенциал и создать заявку, которую действительно замечают приёмные
-          комиссии.
+          В WISE programs мы помогаем школьникам из Кыргызстана, Казахстана и
+          стран СНГ найти университет, который соответствует их целям, раскрыть
+          свой потенциал и создать заявку, которую действительно замечают
+          приёмные комиссии.
         </motion.p>
 
         <motion.div
@@ -53,6 +53,19 @@ export const Hero = () => {
           className={styles.ctaWrapper}
         >
           <PremiumButton text="Получить разбор профиля сейчас" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+          className={styles.secondaryCtaWrapper}
+        >
+          <a href="#quiz" className={styles.secondaryCta}>
+            Узнать свои топ-3 университета
+            <span className={styles.arrow}>→</span>
+          </a>
         </motion.div>
 
         <div className={styles.statsDivider} />
@@ -70,17 +83,23 @@ export const Hero = () => {
 
           <div className={styles.statItem}>
             <div className={styles.statNumber}>55+ часов</div>
-            <div className={styles.statText}>стратегической индивидуальной работы</div>
+            <div className={styles.statText}>
+              стратегической индивидуальной работы
+            </div>
           </div>
 
           <div className={styles.statItem}>
             <div className={styles.statNumber}>19 часов</div>
-            <div className={styles.statText}>1-на-1 разбор стратегии и профиля с экспертом</div>
+            <div className={styles.statText}>
+              1-на-1 разбор стратегии и профиля с экспертом
+            </div>
           </div>
 
           <div className={styles.statItem}>
             <div className={styles.statNumber}>1000+</div>
-            <div className={styles.statText}>поступивших студентов в топовые ВУЗы</div>
+            <div className={styles.statText}>
+              поступивших студентов в топовые ВУЗы
+            </div>
           </div>
         </motion.div>
       </div>
