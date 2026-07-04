@@ -1,82 +1,87 @@
 "use client";
 
-import styles from "./Compare.module.css";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import styles from "./Compare.module.css";
 
 export default function Compare() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Разница, которая реально влияет на оффер</h2>
+      <h2 className={styles.title}>
+        Разница, которая реально влияет на{" "}
+        <span className={styles.accent}>оффер</span>
+      </h2>
 
       <div className={styles.wrapper}>
-        {/* WITHOUT WISE */}
+        {/* BAD */}
         <div className={`${styles.card} ${styles.bad}`}>
           <div className={styles.label}>Без стратегии</div>
-
           <h3 className={styles.cardTitle}>Обычная подача</h3>
 
+          <div className={styles.statsRow}>
+            <div className={styles.miniStat}>
+              <span>0</span>
+              <p>структуры</p>
+            </div>
+            <div className={styles.miniStat}>
+              <span>1</span>
+              <p>шаблон</p>
+            </div>
+            <div className={styles.miniStat}>
+              <span>↓</span>
+              <p>низкий шанс</p>
+            </div>
+          </div>
+
           <ul className={styles.list}>
-            <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Делаешь всё “наугад” — оценки, курсы, активности без системы
+            <li>
+              <FaTimesCircle /> Всё делается без системы
             </li>
-
-            <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Подаёшься как все: одинаковые тексты, одинаковые заявки
+            <li>
+              <FaTimesCircle /> Одинаковые заявки
             </li>
-
-            <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Твоя история теряется среди других кандидатов
+            <li>
+              <FaTimesCircle /> Слабая персонализация
             </li>
-
-            <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Не понимаешь, что реально важно для поступления
-            </li>
-
-            <li className={styles.item}>
-              <FaTimesCircle className={styles.iconBad} />
-              Нет стратегии — просто набор действий без результата
+            <li>
+              <FaTimesCircle /> Нет стратегии
             </li>
           </ul>
         </div>
 
-        {/* WITH WISE */}
+        {/* GOOD */}
         <div className={`${styles.card} ${styles.good}`}>
-          <div className={styles.glowRing}></div>
+          <div className={styles.glowRing} />
 
-          <div className={styles.label}>WISE ADMISSION SYSTEM</div>
-
+          <div className={styles.label}>WISE SYSTEM</div>
           <h3 className={styles.cardTitle}>Стратегическая подача</h3>
 
+          <div className={styles.statsRow}>
+            <div className={styles.miniStat}>
+              <span>92%</span>
+              <p>accept rate boost</p>
+            </div>
+            <div className={styles.miniStat}>
+              <span>25K+</span>
+              <p>слов эссе</p>
+            </div>
+            <div className={styles.miniStat}>
+              <span>1:1</span>
+              <p>менторинг</p>
+            </div>
+          </div>
+
           <ul className={styles.list}>
-            <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Помогаем понять, в чём ты реально силён, а не “в чём вроде норм”
+            <li>
+              <FaCheckCircle /> Стратегия под топ-вузы
             </li>
-
-            <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Собираем твою личную историю, а не просто список оценок и курсов
+            <li>
+              <FaCheckCircle /> Личная история кандидата
             </li>
-
-            <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Показываем университетам, кто ты есть на самом деле, а не только
-              баллы
+            <li>
+              <FaCheckCircle /> Сильное позиционирование
             </li>
-
-            <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Строим чёткий план поступления под твою цель, а не “куда
-              получится”
-            </li>
-
-            <li className={styles.item}>
-              <FaCheckCircle className={styles.iconGood} />
-              Упаковываем профиль так, чтобы ты выделялся среди тысяч заявок
+            <li>
+              <FaCheckCircle /> Выделение среди тысяч заявок
             </li>
           </ul>
         </div>
