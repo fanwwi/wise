@@ -1,74 +1,59 @@
 "use client";
 
-import styles from "./Value.module.css";
 import {
   FaUserCheck,
   FaMapMarkedAlt,
   FaHandsHelping,
   FaGlobe,
 } from "react-icons/fa";
+import styles from "./Value.module.css";
 
-const Value = () => {
+const items = [
+  {
+    icon: <FaUserCheck />,
+    title: "Видим человека за заявкой",
+    text: "Разбираем достижения так, чтобы университет увидел не список, а сильного кандидата с потенциалом.",
+  },
+  {
+    icon: <FaMapMarkedAlt />,
+    title: "Индивидуальная стратегия",
+    text: "Подбираем страну, вуз и план поступления под твои цели, а не под шаблоны.",
+  },
+  {
+    icon: <FaHandsHelping />,
+    title: "Полное сопровождение",
+    text: "Ведём от идеи до оффера, закрывая все этапы поступления без хаоса.",
+  },
+  {
+    icon: <FaGlobe />,
+    title: "Международная экспертиза",
+    text: "Адаптируем стратегию под реальные требования университетов разных стран.",
+  },
+];
+
+export default function Value() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>
-          Поступление в топ университет — это стратегия, а не документы
+          Поступление в топ-вузы — это <span>стратегия</span>, а не документы
         </h2>
 
         <p className={styles.subtitle}>
-          Мы не оформляем заявки — мы выстраиваем профиль, который выделяет вас
-          среди тысяч кандидатов.
+          Мы выстраиваем не заявку, а позиционирование кандидата, которое
+          выделяет среди тысяч других.
         </p>
 
-        <div className={styles.list}>
-          <div className={styles.card}>
-            <div className={styles.headerRow}>
-              <FaUserCheck className={styles.icon} />
-              <h3>Видим человека за заявкой</h3>
+        <div className={styles.grid}>
+          {items.map((item, i) => (
+            <div key={i} className={styles.card}>
+              <div className={styles.icon}>{item.icon}</div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
             </div>
-            <p>
-              Анализируем опыт и достижения так, чтобы приёмная
-              комиссия увидела не бумагу, а личность с потенциалом.
-            </p>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.headerRow}>
-              <FaMapMarkedAlt className={styles.icon} />
-              <h3>Индивидуальная стратегия</h3>
-            </div>
-            <p>
-              Подбираем страну, университет и план поступления под ваши цели, а
-              не под шаблонные сценарии.
-            </p>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.headerRow}>
-              <FaHandsHelping className={styles.icon} />
-              <h3>Полное сопровождение</h3>
-            </div>
-            <p>
-              Ведём от первой консультации до оффера, закрывая все этапы
-              поступления без хаоса и потерь.
-            </p>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.headerRow}>
-              <FaGlobe className={styles.icon} />
-              <h3>Международная экспертиза</h3>
-            </div>
-            <p>
-              Понимаем требования разных стран и адаптируем стратегию под
-              реальные критерии университетов.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Value;
+}
