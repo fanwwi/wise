@@ -7,12 +7,26 @@ import Image from "next/image";
 const Whyus = () => {
   return (
     <section className={styles.section} id="about">
+      {/* HERO BANNER */}
       <div className={styles.heroWrapper}>
         <div className={styles.topBanner}>
           <h2 className={styles.bannerTitle}>
-            WISE — World International Study Experience Programs — мы
-            фокусируемся на полном раскрытии кандидата.
+            WISE — система полного раскрытия кандидата для поступления в
+            топ-университеты мира
           </h2>
+
+          {/* double wave */}
+          <div className={styles.wave}>
+            <div className={styles.waveTrack}>
+              <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" />
+              </svg>
+
+              <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -26,10 +40,8 @@ const Whyus = () => {
             transition={{ duration: 0.6 }}
             className={styles.title}
           >
-            Мы
-            <span className={styles.accent}> формируем личность, </span>
-            которую выбирают
-            <span className={styles.accent}> университеты.</span>
+            Мы формируем кандидата уровня, которого выбирают
+            <span className={styles.accent}> топ-университеты.</span>
           </motion.h2>
 
           <motion.p
@@ -38,15 +50,13 @@ const Whyus = () => {
             transition={{ delay: 0.2 }}
             className={styles.text}
           >
-            Мы не ограничиваемся оценками, тестами и списком достижений. Мы
-            анализируем, кто стоит за ними: как человек мыслит, как принимает
-            решения и в каком направлении развивается. 
+            <br />
+            Позиционирование. Эссе. Логика истории. Путь.
             <br />
             <br />
-            Наша задача — собрать
-            целостный профиль студента и представить его приёмной комиссии так,
-            чтобы он выглядел история сильного кандидата с потенциалом и
-            направлением роста.
+            Мы анализируем не только достижения, но и мышление, траекторию
+            развития и личную историю студента, формируя целостный академический
+            профиль.
           </motion.p>
         </div>
 
@@ -59,7 +69,7 @@ const Whyus = () => {
         >
           <Image
             src="/images/team.png"
-            alt="Students abroad"
+            alt="WISE team"
             fill
             className={styles.image}
           />
