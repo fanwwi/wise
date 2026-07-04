@@ -11,11 +11,10 @@ const Whyus = () => {
       <div className={styles.heroWrapper}>
         <div className={styles.topBanner}>
           <h2 className={styles.bannerTitle}>
-            WISE — система полного раскрытия личности кандидата для поступления в
-            топ-университеты мира
+            WISE — система полного раскрытия личности кандидата для поступления
+            в топ-университеты мира
           </h2>
 
-          {/* double wave */}
           <div className={styles.wave}>
             <div className={styles.waveTrack}>
               <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
@@ -55,8 +54,7 @@ const Whyus = () => {
             <br />
             <br />
             Мы анализируем не только достижения, но и мышление, траекторию
-            развития и личную историю студента, формируя целостный академический
-            профиль.
+            развития и личную историю студента.
           </motion.p>
         </div>
 
@@ -67,12 +65,21 @@ const Whyus = () => {
           transition={{ duration: 0.7 }}
           className={styles.right}
         >
-          <Image
-            src="/images/team.png"
-            alt="WISE team"
-            fill
-            className={styles.image}
-          />
+          <div className={styles.collage}>
+            <div className={styles.leftCol}>
+              <div className={styles.imgBox}>
+                <Image src="/images/harvard.jpg" alt="Harvard" fill />
+              </div>
+
+              <div className={styles.imgBox}>
+                <Image src="/images/yale.jpg" alt="Yale" fill />
+              </div>
+            </div>
+
+            <div className={styles.rightCol}>
+              <Image src="/images/collage.jpg" alt="Campus" fill />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
