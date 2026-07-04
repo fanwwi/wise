@@ -52,11 +52,19 @@
 /* ---------------- LOGO ---------------- */
 
 .logo {
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  color: white;
-  transition: 0.3s;
+  height: 84px;
+  width: auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 0 10px rgba(0, 194, 255, 0.35));
+
+  transition: all 0.3s ease;
+}
+
+.logoA:hover .logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 18px rgba(0, 194, 255, 0.55));
 }
 
 .logoA {
@@ -64,7 +72,7 @@
 }
 
 .scrolled .logo {
-  color: #0f172a;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
 }
 
 /* ---------------- LINKS ---------------- */

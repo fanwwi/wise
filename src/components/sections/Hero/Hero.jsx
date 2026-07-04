@@ -40,7 +40,7 @@ export const Hero = () => {
           transition={{ delay: 0.3 }}
           className={styles.subtitle}
         >
-          В WISE мы помогаем школьникам из Кыргызстана, Казахстана и стран СНГ
+          В WISE programs мы помогаем школьникам из Кыргызстана, Казахстана и стран СНГ
           найти университет, который соответствует их целям, раскрыть свой
           потенциал и создать заявку, которую действительно замечают приёмные
           комиссии.
@@ -65,22 +65,22 @@ export const Hero = () => {
         >
           <div className={styles.statItem}>
             <div className={styles.statNumber}>25 000+</div>
-            <div className={styles.statText}>слов сильного эссе и заявок</div>
+            <div className={styles.statText}>слов успешного эссе и заявок</div>
           </div>
 
           <div className={styles.statItem}>
             <div className={styles.statNumber}>55+ часов</div>
-            <div className={styles.statText}>стратегической работы</div>
+            <div className={styles.statText}>стратегической индивидуальной работы</div>
           </div>
 
           <div className={styles.statItem}>
             <div className={styles.statNumber}>19 часов</div>
-            <div className={styles.statText}>1-на-1 с экспертом</div>
+            <div className={styles.statText}>1-на-1 разбор стратегии и профиля с экспертом</div>
           </div>
 
           <div className={styles.statItem}>
             <div className={styles.statNumber}>1000+</div>
-            <div className={styles.statText}>поступивших студентов</div>
+            <div className={styles.statText}>поступивших студентов в топовые ВУЗы</div>
           </div>
         </motion.div>
       </div>

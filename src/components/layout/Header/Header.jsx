@@ -37,7 +37,11 @@ export const Header = () => {
     >
       <nav className={styles.nav}>
         <a href="#main" className={styles.logoA}>
-          <div className={styles.logo}>WISE</div>
+          <img
+            src={scrolled ? "/images/logo2.png" : "/images/logo.png"}
+            alt="WISE"
+            className={styles.logo}
+          />
         </a>
         <div className={styles.links}>
           <a href="#about">О нас</a>
