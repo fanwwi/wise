@@ -37,7 +37,7 @@ export default function Stories() {
   const loop = [...stories, ...stories]; // 🔥 ключ к бесконечности
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="results">
       <h2 className={styles.title}>Истории, которые меняют жизнь</h2>
 
       <div className={styles.viewport}>

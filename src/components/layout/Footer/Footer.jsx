@@ -44,8 +44,13 @@ export default function Footer() {
             <a href="https://wa.me/996504070414" target="_blank">
               WhatsApp
             </a>
-            <a href="#">Telegram</a>
-            <a href="#">Email</a>
+            <a
+              href="https://t.me/Yryskeldigg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Telegram
+            </a>
           </div>
         </div>
       </div>
