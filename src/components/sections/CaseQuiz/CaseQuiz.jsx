@@ -153,11 +153,6 @@ export const CaseQuiz = () => {
                 <h3 className={styles.resultTitle}>
                   Твоя стратегия поступления готова
                 </h3>
-
-                <p className={styles.subtitle}>
-                  Мы нашли для тебя <b>35 университетов</b> и собрали понятный
-                  план
-                </p>
               </div>
 
               <div className={styles.uniTitle}>

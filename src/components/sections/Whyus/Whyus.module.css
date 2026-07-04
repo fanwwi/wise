@@ -139,12 +139,12 @@
   font-weight: 900;
   line-height: 1.25;
 
-  color: #0043a7;
+  color: #0b408f;
   letter-spacing: -0.03em;
 }
 
 .accent {
-  background: linear-gradient(90deg, #7fd0ff, #ffffff);
+  background: linear-gradient(90deg, #00a2ff, #5745ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 

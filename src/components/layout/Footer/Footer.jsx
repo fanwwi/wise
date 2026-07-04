@@ -12,7 +12,7 @@ export default function Footer() {
       <div className={styles.container}>
         {/* brand */}
         <div className={styles.brand}>
-          <h2 className={styles.logo}>WISE</h2>
+          <img src="/images/logo.png" alt="WISE" className={styles.logoImg} />
           <p className={styles.tagline}>
             Мы превращаем поступление в понятную систему: от твоего профиля до
             оффера из университета — без хаоса и догадок.
@@ -53,7 +53,9 @@ export default function Footer() {
       {/* bottom line */}
       <div className={styles.bottom}>
         <span>© {new Date().getFullYear()} WISE. All rights reserved.</span>
-        <span className={styles.small}>Built for ambitious students from Central Asia 🚀</span>
+        <span className={styles.small}>
+          Built for ambitious students from Central Asia 🚀
+        </span>
       </div>
     </footer>
   );

@@ -48,14 +48,19 @@
   max-width: 300px;
 }
 
-.logo {
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: 2px;
+.logoImg {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 14px;
 
-  background: linear-gradient(90deg, #00e5ff, #7c4dff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 10px 30px rgba(0, 140, 255, 0.35));
+  transition: 0.3s ease;
+  margin-left: -20px;
+}
+
+.logoImg:hover {
+  transform: scale(1.05);
 }
 
 .tagline {
