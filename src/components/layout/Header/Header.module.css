@@ -6,7 +6,9 @@
 
   z-index: 999;
 
-  padding: 14px 16px; /* 🔥 ключевой фикс */
+  padding: 0px 16px;
+  padding-top: 10px;
+  /* 🔥 ключевой фикс */
 }
 
 /* NAV — FULL WIDTH PREMIUM LAYOUT */
@@ -52,7 +54,7 @@
 /* ---------------- LOGO ---------------- */
 
 .logo {
-  height: 84px;
+  height: 74px;
   width: auto;
 
   object-fit: contain;
@@ -109,7 +111,7 @@
 
 .cta {
   position: relative;
-
+  margin-top: -10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;

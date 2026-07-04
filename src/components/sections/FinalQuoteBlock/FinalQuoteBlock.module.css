@@ -116,26 +116,57 @@
   margin-top: 30px;
   padding: 18px 26px;
   border-radius: 18px;
-  border: none;
 
   font-size: 16px;
   font-weight: 900;
   color: white;
+  text-decoration: none;
 
-  background: linear-gradient(135deg, #190096, #2373ce, #3100b7);
-
-  box-shadow:
-    0 20px 80px rgba(0, 229, 255, 0.35),
-    0 0 80px rgba(124, 77, 255, 0.25);
-
-  cursor: pointer;
-}
-
-.cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+
+  cursor: pointer;
+
+  /* ключ: движущийся градиент */
+  background: linear-gradient(
+    270deg,
+    #190096,
+    #2373ce,
+    #3100b7,
+    #2373ce,
+    #190096
+  );
+  background-size: 400% 400%;
+
+  animation: gradientMove 6s ease infinite;
+
+  box-shadow: 0 20px 60px rgba(0, 60, 255, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 30px 80px rgba(0, 60, 255, 0.35);
+}
+
+.cta:active {
+  transform: scale(0.98);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* micro urgency text */

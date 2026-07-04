@@ -63,11 +63,11 @@ export const CaseQuiz = () => {
         setTimeout(() => {
           setAnalyzing(false);
           setDone(true);
-        }, 2000);
+        }, 1200);
       } else {
         setStep((s) => s + 1);
       }
-    }, 350);
+    }, 150);
   };
 
   const restart = () => {
@@ -105,8 +105,8 @@ export const CaseQuiz = () => {
               className={styles.stack}
               initial={{ opacity: 0, x: 60, scale: 0.96 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -60, scale: 0.96 }}
-              transition={{ duration: 0.35 }}
+              exit={{ opacity: 0, x: -30, scale: 0.98 }}
+              transition={{ duration: 0.18, ease: "easeOut" }}
             >
               {/* QUESTION CARD */}
               <div className={styles.stepCard}>
@@ -116,7 +116,7 @@ export const CaseQuiz = () => {
                   {current.options.map((opt, i) => (
                     <motion.button
                       key={i}
-                      whileTap={{ scale: 0.97 }}
+                      whileTap={{ scale: 0.99 }}
                       onClick={() => handleSelect(opt)}
                       className={`${styles.option} ${
                         selected === opt ? styles.activeOption : ""

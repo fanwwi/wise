@@ -11,7 +11,7 @@ const Whyus = () => {
       <div className={styles.heroWrapper}>
         <div className={styles.topBanner}>
           <h2 className={styles.bannerTitle}>
-            WISE — система полного раскрытия кандидата для поступления в
+            WISE — система полного раскрытия личности кандидата для поступления в
             топ-университеты мира
           </h2>
 

@@ -7,10 +7,10 @@ export default function FinalQuoteBlock() {
   return (
     <motion.section
       className={styles.wrapper}
-      initial={{ opacity: 0, y: 80, scale: 0.92 }}
+      initial={{ opacity: 0, y: 30, scale: 0.98 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
     >
       {/* aggressive background layers */}
       <div className={styles.flash1} />
@@ -18,12 +18,16 @@ export default function FinalQuoteBlock() {
       <div className={styles.gridGlow} />
 
       {/* CARD */}
-      <motion.div className={styles.card} whileHover={{ scale: 1.03 }}>
+      <motion.div
+        className={styles.card}
+        whileHover={{ scale: 1.015 }}
+        transition={{ duration: 0.2 }}
+      >
         {/* pulse ring */}
         <motion.div
           className={styles.pulseRing}
           animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 3, repeat: Infinity }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         />
 
         <motion.div

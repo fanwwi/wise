@@ -20,7 +20,7 @@ export const TrustBar = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className={styles.title}
         >
-          С нами ты точно <span className={styles.accent}>поступишь</span>
+          Строй своё будущее <span className={styles.accent}>вместе с нами</span>
         </motion.h2>
 
         <div className={styles.grid}>
