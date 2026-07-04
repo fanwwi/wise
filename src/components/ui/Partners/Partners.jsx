@@ -4,7 +4,7 @@ import styles from "./Partners.module.css";
 
 const partners = [
   {
-    name: "Harvard University",
+    name: "Harvard",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6rsgkK17KedEwSEFJbkDpN5uN5v2EOquTgEPjdbvQq6GOIku-Gw1-hw&s=10",
   },
   {
@@ -25,25 +25,28 @@ const partners = [
   },
 ];
 
-const Partners = () => {
+export default function Partners() {
+  const loop = [...partners, ...partners, ...partners];
+
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Наши партнёры</h2>
+      <h2 className={styles.title}>
+        Партнёры, которые <span>двигают</span> тебя к <span>офферу</span>
+      </h2>
 
       <div className={styles.slider}>
         <div className={styles.track}>
-          {[...partners, ...partners].map((p, i) => (
+          {loop.map((p, i) => (
             <div key={i} className={styles.card}>
-              <img src={p.logo} className={styles.logo} />
-              <div className={styles.overlay}>
-                <span>{p.name}</span>
-              </div>
+              <img src={p.logo} alt={p.name} className={styles.logo} />
+              <div className={styles.glow} />
             </div>
           ))}
         </div>
       </div>
+
+      <div className={styles.fadeLeft} />
+      <div className={styles.fadeRight} />
     </section>
   );
-};
-
-export default Partners;
+}

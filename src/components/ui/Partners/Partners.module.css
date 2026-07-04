@@ -1,118 +1,137 @@
 .section {
-  padding: 60px 0;
-  text-align: center;
-
-  background: #1f86ff;
+  position: relative;
+  padding: 90px 0;
   overflow: hidden;
+
+  /* премиум синий (не детский) */
+  background: radial-gradient(circle at top, #0a58ff, #0033aa);
 }
 
+/* TITLE */
 .title {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
-  margin-bottom: 40px;
-  color: #ffffff;
+  text-align: center;
+  color: #fff;
+
+  margin-bottom: 50px;
+  letter-spacing: -0.02em;
 }
 
-/* =========================
-   SLIDER WRAPPER
-========================= */
+.title span {
+  background: linear-gradient(90deg, #7fd0ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SLIDER */
 .slider {
   overflow: hidden;
+  position: relative;
   width: 100%;
 }
 
-/* =========================
-   TRACK (ONLY ONE ANIMATION)
-========================= */
+/* TRACK — FIXED SEAMLESS */
 .track {
   display: flex;
-  gap: 30px;
   width: max-content;
+  gap: 28px;
 
-  animation: marquee 18s linear infinite;
+  animation: scroll 8s linear infinite;
   will-change: transform;
-  transform: translate3d(0, 0, 0);
 }
 
-/* 🔥 PROPER LOOP */
-@keyframes marquee {
+/* 🔥 REAL SEAMLESS LOOP */
+@keyframes scroll {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
   100% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translateX(-33.333%);
   }
 }
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 .card {
   position: relative;
 
-  width: 180px;
+  width: 190px;
   height: 120px;
-
-  background: #ffffff;
-  border-radius: 14px;
-
-  overflow: hidden;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(18px);
 
   flex-shrink: 0;
-  cursor: pointer;
+
+  transition: 0.35s ease;
+
+  overflow: hidden;
+}
+
+/* glow inside card */
+.glow {
+  position: absolute;
+  inset: -40%;
+
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.25), transparent 60%);
+
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.card:hover .glow {
+  opacity: 1;
+}
+
+/* hover premium lift */
+.card:hover {
+  transform: translateY(-6px) scale(1.04);
+  border-color: rgba(120, 220, 255, 0.4);
+  box-shadow: 0 25px 70px rgba(0, 180, 255, 0.25);
 }
 
 /* LOGO */
 .logo {
-  width: 85%;
-  height: 85%;
+  width: 72%;
+  height: 72%;
   object-fit: contain;
-  transition: transform 0.3s ease;
-}
 
-/* =========================
-   HOVER EFFECT
-========================= */
-.overlay {
-  position: absolute;
-  inset: 0;
+  filter: brightness(1.05);
+  opacity: 0.9;
 
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-
-  padding: 12px;
-
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
-
-  opacity: 0;
-  transition: 0.25s ease;
-}
-
-.overlay span {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-
-  transform: translateY(10px);
-  transition: 0.25s ease;
-}
-
-/* hover */
-.card:hover .overlay {
-  opacity: 1;
-}
-
-.card:hover .overlay span {
-  transform: translateY(0);
+  transition: 0.3s ease;
 }
 
 .card:hover .logo {
-  transform: scale(1.05);
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* FADE EDGES (smoothed) */
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, #0a58ff, transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, #0033aa, transparent);
 }
