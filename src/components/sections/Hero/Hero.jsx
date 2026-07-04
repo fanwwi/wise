@@ -29,8 +29,9 @@ export const Hero = () => {
           transition={{ duration: 0.7 }}
           className={styles.title}
         >
-          Поступи в университет <br />
-          <span className={styles.accent}>который подходит именно тебе</span>
+          Покажем университету
+          <br />
+          <span className={styles.accent}>настоящего тебя</span>
         </motion.h1>
 
         <motion.p
@@ -39,8 +40,10 @@ export const Hero = () => {
           transition={{ delay: 0.3 }}
           className={styles.subtitle}
         >
-          Помогаем выстроить стратегию поступления в зарубежные университеты —
-          от идеи до оффера и гранта.
+          В WISE мы помогаем школьникам из Кыргызстана, Казахстана и стран СНГ
+          найти университет, который соответствует их целям, раскрыть свой
+          потенциал и создать заявку, которую действительно замечают приёмные
+          комиссии.
         </motion.p>
 
         <motion.div
@@ -50,6 +53,35 @@ export const Hero = () => {
           className={styles.ctaWrapper}
         >
           <PremiumButton text="Получить разбор профиля сейчас" />
+        </motion.div>
+
+        <div className={styles.statsDivider} />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className={styles.stats}
+        >
+          <div className={styles.statItem}>
+            <div className={styles.statNumber}>25 000+</div>
+            <div className={styles.statText}>слов сильного эссе и заявок</div>
+          </div>
+
+          <div className={styles.statItem}>
+            <div className={styles.statNumber}>55+ часов</div>
+            <div className={styles.statText}>стратегической работы</div>
+          </div>
+
+          <div className={styles.statItem}>
+            <div className={styles.statNumber}>19 часов</div>
+            <div className={styles.statText}>1-на-1 с экспертом</div>
+          </div>
+
+          <div className={styles.statItem}>
+            <div className={styles.statNumber}>1000+</div>
+            <div className={styles.statText}>поступивших студентов</div>
+          </div>
         </motion.div>
       </div>
     </section>
