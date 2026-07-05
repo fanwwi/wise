@@ -34,12 +34,12 @@ const steps = [
 ];
 
 const universities = [
-  { name: "Bellevue College", logo: "/images/bellevue.jpg" },
-  { name: "Northeastern University", logo: "/images/northeastern.png" },
-  { name: "University of Colorado", logo: "/images/colorado.png" },
+  { name: "Bellevue College" },
+  { name: "Northeastern University" },
+  { name: "University of Colorado" },
 ];
 
-export const CaseQuiz = () => {
+export default function CaseQuiz () {
   const [step, setStep] = useState(0);
   const [data, setData] = useState({});
   const [selected, setSelected] = useState(null);

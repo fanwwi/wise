@@ -87,7 +87,11 @@ export default function Stories() {
           {stories.map((s, i) => (
             <div key={i} className={styles.card}>
               <div className={styles.imageBox}>
-                <img src={s.image} className={styles.image} />
+                <img
+                  src={s.image}
+                  className={styles.image}
+                  alt={`Student success story - ${s.name} from ${s.country}`}
+                />
 
                 <div className={styles.overlay}>
                   <h3 className={styles.hook}>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import styles from "./Hero.module.css";
 import { PremiumButton } from "@/components/shared/PremiumButton/PremiumButton";
 
-export const Hero = () => {
+export default function Hero() {
   return (
     <section className={styles.hero} id="main">
       <div className={styles.background} />
@@ -105,4 +105,4 @@ export const Hero = () => {
       </div>
     </section>
   );
-};
+}

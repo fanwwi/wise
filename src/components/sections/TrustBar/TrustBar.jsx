@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import styles from "./TrustBar.module.css";
 
-export const TrustBar = () => {
+export default function TrustBar() {
   const stats = [
     { value: "1000", suffix: "+", label: "студентов уже поступили с нами" },
     { value: "5.5", suffix: "M+", label: "общая сумма полученных грантов" },

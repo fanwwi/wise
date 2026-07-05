@@ -10,7 +10,7 @@ import { useState } from "react";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import styles from "./Header.module.css";
 
-export const Header = () => {
+export default function Header () {
   const { scrollY } = useScroll();
 
   const [hidden, setHidden] = useState(false);
@@ -48,8 +48,8 @@ export const Header = () => {
         <nav className={styles.nav}>
           <a href="#main" className={styles.logoA}>
             <img
-              src={scrolled ? "/images/logo2.png" : "/images/logo.png"}
-              alt="WISE"
+              src={scrolled ? "/images/logo2.webp" : "/images/logo.webp"}
+              alt="WISE Programs — система поступления в топ-университеты мира"
               className={styles.logo}
             />
           </a>

@@ -12,7 +12,11 @@ export default function Footer() {
       <div className={styles.container}>
         {/* brand */}
         <div className={styles.brand}>
-          <img src="/images/logo.png" alt="WISE" className={styles.logoImg} />
+          <img
+            src="/images/logo.webp"
+            alt="WISE Programs — логотип системы поступления в топ-университеты"
+            className={styles.logoImg}
+          />
           <p className={styles.tagline}>
             Мы превращаем поступление в понятную систему: от твоего профиля до
             оффера из университета — без хаоса и догадок.

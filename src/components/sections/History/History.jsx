@@ -4,7 +4,7 @@ import styles from "./History.module.css";
 import { FaLightbulb, FaUserGraduate, FaRocket } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const History = () => {
+export default function History() {
   return (
     <section className={styles.heroWrapper} id="history">
       <div className={styles.topBanner}>
@@ -71,5 +71,3 @@ const History = () => {
     </section>
   );
 };
-
-export default History;

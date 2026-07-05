@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { initLenis } from "@/lib/lenis";
 
-export const SmoothScroll = ({ children }) => {
+export default function SmoothScroll({ children }) {
   useEffect(() => {
     const cleanup = initLenis();
     return () => cleanup();

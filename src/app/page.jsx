@@ -1,18 +1,30 @@
-import { CaseQuiz } from "@/components/sections/CaseQuiz/CaseQuiz";
-import Compare from "@/components/sections/Compare/Compare";
-import Countries from "@/components/sections/Countries/Countries";
-import FinalQuoteBlock from "@/components/sections/FinalQuoteBlock/FinalQuoteBlock";
-import { Hero } from "@/components/sections/Hero/Hero";
-import History from "@/components/sections/History/History";
-import Mission from "@/components/sections/Mission/Mission";
-import Roadmap from "@/components/sections/Roadmap/Roadmap";
-import Stories from "@/components/sections/Stories/Stories";
-import { TrustBar } from "@/components/sections/TrustBar/TrustBar";
-import Value from "@/components/sections/Value/Value";
-import Whyus from "@/components/sections/Whyus/Whyus";
-import Partners from "@/components/ui/Partners/Partners";
+import dynamic from "next/dynamic";
 
-// ОБЯЗАТЕЛЬНО должен быть export default
+// 1. Убираем фигурные скобки для Hero, раз там export default
+import Hero from "@/components/sections/Hero/Hero";
+
+// 2. Для динамических компонентов убираем .then(), если они все export default
+const Whyus = dynamic(() => import("@/components/sections/Whyus/Whyus"));
+const History = dynamic(() => import("@/components/sections/History/History"));
+const Mission = dynamic(() => import("@/components/sections/Mission/Mission"));
+const TrustBar = dynamic(
+  () => import("@/components/sections/TrustBar/TrustBar"),
+);
+const Value = dynamic(() => import("@/components/sections/Value/Value"));
+const Roadmap = dynamic(() => import("@/components/sections/Roadmap/Roadmap"));
+const Compare = dynamic(() => import("@/components/sections/Compare/Compare"));
+const Countries = dynamic(
+  () => import("@/components/sections/Countries/Countries"),
+);
+const Stories = dynamic(() => import("@/components/sections/Stories/Stories"));
+const CaseQuiz = dynamic(
+  () => import("@/components/sections/CaseQuiz/CaseQuiz"),
+);
+const Partners = dynamic(() => import("@/components/ui/Partners/Partners"));
+const FinalQuoteBlock = dynamic(
+  () => import("@/components/sections/FinalQuoteBlock/FinalQuoteBlock"),
+);
+
 export default function Home() {
   return (
     <main>

@@ -9,7 +9,7 @@ const points = [
   { icon: "⚡", text: "Доступ без элитных входов и “закрытых дверей”" },
 ];
 
-const Mission = () => {
+export default function Mission() {
   return (
     <section className={styles.wrapper} id="mission">
       {/* ambient glow */}
@@ -66,5 +66,3 @@ const Mission = () => {
     </section>
   );
 };
-
-export default Mission;

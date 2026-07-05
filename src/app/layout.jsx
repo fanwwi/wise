@@ -1,17 +1,32 @@
 import "@/styles/globals.css";
-import { Header } from "@/components/layout/Header/Header";
-import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import Footer from "@/components/layout/Footer/Footer";
+import { Inter } from "next/font/google";
+import dynamic from "next/dynamic";
+
+const inter = Inter({ subsets: ["cyrillic", "latin"], display: "swap" });
+
+const Header = dynamic(() =>
+  import("@/components/layout/Header/Header").then(
+    (mod) => mod.Header || mod.default,
+  ),
+);
+const Footer = dynamic(() =>
+  import("@/components/layout/Footer/Footer").then(
+    (mod) => mod.Footer || mod.default,
+  ),
+);
+
+export const metadata = {
+  title: "WISE Programs — поступление в топ-университеты мира",
+  description: "WISE — система поступления в топ-вузы США, Европы и Азии.",
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={inter.className}>
       <body>
-        <SmoothScroll>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </SmoothScroll>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

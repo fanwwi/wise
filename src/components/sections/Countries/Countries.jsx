@@ -8,7 +8,7 @@ const countries = [
   {
     name: "USA",
     flag: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTshOe6BIb5FtYf6DeY-YspoUjoEaE82ouMZ16h20pKMiygLTkeDIXP3Pdz&s=10",
-    image: "/images/usa.jpg",
+    image: "/images/usa.webp",
     desc: "Топ университеты и сильная карьерная экосистема.",
     factors: "Безопасность • Технологии • Карьера",
     price: "$8,000+",
@@ -16,7 +16,7 @@ const countries = [
   {
     name: "Canada",
     flag: "https://flagcdn.com/ca.svg",
-    image: "/images/canada.jpg",
+    image: "/images/canada.webp",
     desc: "Все что нужно для тебя: баланс образования, жизни и иммиграции.",
     factors: "Безопасность • Работа • Иммиграция",
     price: "$6,000+",
@@ -25,7 +25,7 @@ const countries = [
   {
     name: "Italy",
     flag: "https://flagcdn.com/it.svg",
-    image: "/images/italy.jpg",
+    image: "/images/italy.webp",
     desc: "Доступное образование и сильная культура искусства.",
     factors: "Искусство • История • Доступность",
     price: "$3,000+",
@@ -33,7 +33,7 @@ const countries = [
   {
     name: "Germany",
     flag: "https://flagcdn.com/de.svg",
-    image: "/images/germany.jpg",
+    image: "/images/germany.webp",
     desc: "Бесплатное/дешёвое образование и сильная инженерия.",
     factors: "Инженерия • Экономика • Карьера",
     price: "€0–€2,000",
@@ -41,7 +41,7 @@ const countries = [
   {
     name: "South Korea",
     flag: "https://flagcdn.com/kr.svg",
-    image: "/images/korea.jpg",
+    image: "/images/korea.webp",
     desc: "Технологии, инновации и быстрый карьерный рост.",
     factors: "Технологии • Инновации • Образование",
     price: "$5,000+",
@@ -49,7 +49,7 @@ const countries = [
   {
     name: "Turkey",
     flag: "https://flagcdn.com/tr.svg",
-    image: "/images/turkey.jpg",
+    image: "/images/turkey.webp",
     desc: "Доступное образование и активная студенческая жизнь.",
     factors: "Доступность • Культура • География",
     price: "$2,000+",
@@ -57,7 +57,7 @@ const countries = [
   {
     name: "China",
     flag: "https://flagcdn.com/cn.svg",
-    image: "/images/china.jpg",
+    image: "/images/china.webp",
     desc: "Сильные STEM программы и быстрое развитие технологий.",
     factors: "Технологии • STEM • Инновации",
     price: "$3,500+",
@@ -65,7 +65,7 @@ const countries = [
   {
     name: "Hungary",
     flag: "https://flagcdn.com/hu.svg",
-    image: "/images/hungary.jpg",
+    image: "/images/hungary.webp",
     desc: "Европейское образование по доступной цене.",
     factors: "Медицина • Европа • Доступность",
     price: "$2,500+",
@@ -73,7 +73,7 @@ const countries = [
   {
     name: "Poland",
     flag: "https://flagcdn.com/pl.svg",
-    image: "/images/poland.jpg",
+    image: "/images/poland.webp",
     desc: "Быстро развивающаяся образовательная система Европы.",
     factors: "Экономика • IT • Европа",
     price: "$2,000+",
@@ -81,7 +81,7 @@ const countries = [
   {
     name: "Malaysia",
     flag: "https://flagcdn.com/my.svg",
-    image: "/images/malaysia.jpg",
+    image: "/images/malaysia.webp",
     desc: "Азиатский хаб с международными университетами.",
     factors: "Азия • Международность • Доступность",
     price: "$3,000+",
@@ -114,12 +114,20 @@ export default function Countries() {
             <div key={i} className={styles.card}>
               {/* IMAGE SECTION */}
               <div className={styles.imageBox}>
-                <img src={c.image} className={styles.image} />
+                <img
+                  src={c.image}
+                  className={styles.image}
+                  alt={`${c.name} landscape representing education opportunities`}
+                />
 
                 <div className={styles.overlay} />
 
                 <div className={styles.topContent}>
-                  <img src={c.flag} className={styles.flag} />
+                  <img
+                    src={c.flag}
+                    className={styles.flag}
+                    alt={`${c.name} flag`}
+                  />
                   <h3 className={styles.country}>{c.name}</h3>
                 </div>
               </div>
@@ -128,12 +136,10 @@ export default function Countries() {
               <div className={styles.info}>
                 <p className={styles.desc}>{c.desc}</p>
 
-                {/* HIGHLIGHT LINE (new trust element) */}
                 <div className={styles.factors}>
                   <span>•</span> {c.factors}
                 </div>
 
-                {/* PRICE + CTA */}
                 <div className={styles.bottom}>
                   <div className={styles.priceBox}>
                     <span className={styles.priceLabel}>from</span>

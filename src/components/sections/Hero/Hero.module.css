@@ -18,7 +18,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("/images/hero-image.png");
+  background-image: url("/images/hero-image.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -83,14 +83,6 @@
   background: #00c2ff;
   filter: blur(180px);
   opacity: 0.18;
-}
-
-.noise {
-  inset: 0;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-  z-index: 3;
 }
 
 /* CONTENT */

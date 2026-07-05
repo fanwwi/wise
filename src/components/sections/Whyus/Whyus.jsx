@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import styles from "./Whyus.module.css";
 import Image from "next/image";
 
-const Whyus = () => {
+export default function Whyus() {
   return (
     <section className={styles.section} id="about">
       <div className={styles.container}>
@@ -39,12 +39,15 @@ const Whyus = () => {
           whileInView={{ opacity: 1, scale: 1 }}
         >
           <div className={styles.singleImage}>
-            <Image src="/images/image.jpg" alt="Campus collage" fill priority />
+            <Image
+              src="/images/image.webp"
+              alt="Students studying on international university campus representing global education opportunities"
+              fill
+              priority
+            />
           </div>
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default Whyus;
+}
