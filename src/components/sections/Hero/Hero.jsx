@@ -1,14 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "./Hero.module.css";
 import { PremiumButton } from "@/components/shared/PremiumButton/PremiumButton";
 
 export default function Hero() {
   return (
     <section className={styles.hero} id="main">
-      <div className={styles.background} />
-      <div className={styles.overlay} />
+      {/* Оптимизированный фон */}
+      <div className={styles.backgroundWrapper}>
+        <Image
+          src="/images/hero-image.webp"
+          alt="Hero background"
+          fill
+          priority
+          sizes="100vw"
+          className={styles.backgroundImage}
+        />
+        <div className={styles.overlay} />
+      </div>
+
       <div className={styles.glowLeft} />
       <div className={styles.glowRight} />
       <div className={styles.grid} />
@@ -29,8 +41,7 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
           className={styles.title}
         >
-          Покажем университету
-          <br />
+          Покажем университету <br />
           <span className={styles.accent}>настоящего тебя</span>
         </motion.h1>
 
@@ -63,7 +74,7 @@ export default function Hero() {
           className={styles.secondaryCtaWrapper}
         >
           <a href="#quiz" className={styles.secondaryCta}>
-            Узнать свои топ-3 университета
+            Узнать свои топ-3 университета{" "}
             <span className={styles.arrow}>→</span>
           </a>
         </motion.div>
@@ -76,31 +87,20 @@ export default function Hero() {
           transition={{ delay: 0.8 }}
           className={styles.stats}
         >
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>25 000+</div>
-            <div className={styles.statText}>слов успешного эссе и заявок</div>
-          </div>
-
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>55+ часов</div>
-            <div className={styles.statText}>
-              стратегической индивидуальной работы
+          {[
+            { n: "25 000+", t: "слов успешного эссе и заявок" },
+            { n: "55+ часов", t: "стратегической индивидуальной работы" },
+            {
+              n: "19 часов",
+              t: "1-на-1 разбор стратегии и профиля с экспертом",
+            },
+            { n: "1000+", t: "поступивших студентов в топовые ВУЗы" },
+          ].map((item, i) => (
+            <div key={i} className={styles.statItem}>
+              <div className={styles.statNumber}>{item.n}</div>
+              <div className={styles.statText}>{item.t}</div>
             </div>
-          </div>
-
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>19 часов</div>
-            <div className={styles.statText}>
-              1-на-1 разбор стратегии и профиля с экспертом
-            </div>
-          </div>
-
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>1000+</div>
-            <div className={styles.statText}>
-              поступивших студентов в топовые ВУЗы
-            </div>
-          </div>
+          ))}
         </motion.div>
       </div>
     </section>

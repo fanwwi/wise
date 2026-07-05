@@ -1,5 +1,5 @@
 .heroWrapper {
-  width: 100vw;
+  width: 99vw;
   margin-left: calc(50% - 50vw);
 }
 
@@ -30,7 +30,7 @@
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 100%;
+  width: 99%;
   height: 140px;
   overflow: hidden;
 }
