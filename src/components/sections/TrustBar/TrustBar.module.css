@@ -248,3 +248,112 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ================= TABLET ================= */
+@media (max-width: 1100px) {
+  .title {
+    font-size: 40px;
+    margin-bottom: 55px;
+  }
+
+  .number {
+    font-size: 48px;
+  }
+
+  .plus {
+    font-size: 30px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}
+
+/* ================= SMALL TABLET ================= */
+@media (max-width: 768px) {
+  .section {
+    padding: 110px 20px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 45px;
+    line-height: 1.2;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .card {
+    padding: 30px 14px;
+  }
+
+  .number {
+    font-size: 42px;
+  }
+
+  .plus {
+    font-size: 26px;
+  }
+
+  .label {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 500px) {
+  .section {
+    padding: 90px 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 35px;
+    line-height: 1.25;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 26px 14px;
+    border-radius: 18px;
+  }
+
+  .number {
+    font-size: 38px;
+  }
+
+  .plus {
+    font-size: 22px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 360px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .number {
+    font-size: 34px;
+  }
+
+  .plus {
+    font-size: 20px;
+  }
+
+  .label {
+    font-size: 12.5px;
+  }
+}

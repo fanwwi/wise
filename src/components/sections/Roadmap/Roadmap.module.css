@@ -125,7 +125,7 @@
   color: rgba(11, 42, 85, 0.65);
 }
 
-/* LINE (process feel) */
+/* LINE */
 .line {
   position: absolute;
   left: 32px;
@@ -144,3 +144,81 @@
   display: flex;
   justify-content: center;
 }
+
+/* =========================
+   RESPONSIVE (ONLY TEXT SCALE)
+========================= */
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 14.5px;
+    margin-bottom: 40px;
+  }
+
+  .content h3 {
+    font-size: 16px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 70px 18px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .subtitle {
+    font-size: 13.5px;
+    margin-bottom: 30px;
+  }
+
+  .step {
+    padding: 16px 16px;
+    gap: 12px;
+  }
+
+  .iconBox {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .content h3 {
+    font-size: 15px;
+  }
+
+  .content p {
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 420px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 12.8px;
+  }
+
+  .content h3 {
+    font-size: 14px;
+  }
+
+  .content p {
+    font-size: 13px;
+  }
+}
+

@@ -17,23 +17,20 @@
 
   overflow: hidden;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 
-  /* 💡 базовое свечение */
   box-shadow:
     0 0 10px rgba(0, 90, 255, 0.35),
     0 0 25px rgba(0, 140, 255, 0.25);
 
   animation: glowPulse 2.8s ease-in-out infinite;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
 }
 
 /* hover */
@@ -55,12 +52,9 @@
   z-index: 2;
 }
 
-/* =========================
-   SHINE EFFECT
-========================= */
+/* SHINE */
 .shine {
   position: absolute;
-
   left: -50%;
   top: 0;
 
@@ -77,7 +71,6 @@
   );
 
   transform: skewX(-20deg);
-
   animation: shineMove 2.6s linear infinite;
 
   z-index: 1;
@@ -85,8 +78,34 @@
 }
 
 /* =========================
-   GLOW PULSE
+   RESPONSIVE
 ========================= */
+
+@media (max-width: 900px) {
+  .button {
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .button {
+    padding: 12px 24px;
+    font-size: 13.5px;
+    border-radius: 14px;
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .button {
+    padding: 10px 20px;
+    font-size: 12.5px;
+    border-radius: 12px;
+  }
+}
+
+/* ANIMATIONS */
 @keyframes glowPulse {
   0% {
     box-shadow:
@@ -107,7 +126,6 @@
   }
 }
 
-/* shine animation */
 @keyframes shineMove {
   0% {
     transform: translateX(-60%) skewX(-20deg);
