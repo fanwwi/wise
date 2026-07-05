@@ -7,7 +7,7 @@ import Image from "next/image";
 const Whyus = () => {
   return (
     <section className={styles.section} id="about">
-      {/* HERO BANNER */}
+      {/* HERO */}
       <div className={styles.heroWrapper}>
         <div className={styles.topBanner}>
           <h2 className={styles.bannerTitle}>
@@ -20,7 +20,6 @@ const Whyus = () => {
               <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
                 <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" />
               </svg>
-
               <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
                 <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" />
               </svg>
@@ -31,25 +30,22 @@ const Whyus = () => {
 
       {/* CONTENT */}
       <div className={styles.container}>
-        {/* LEFT */}
+        {/* LEFT TEXT */}
         <div className={styles.left}>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             className={styles.title}
           >
-            Мы формируем кандидата уровня, которого выбирают
-            <span className={styles.accent}> топ-университеты.</span>
+            Мы формируем кандидата уровня, которого выбирают{" "}
+            <span className={styles.accent}>топ-университеты.</span>
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
             className={styles.text}
           >
-            <br />
             Позиционирование. Эссе. Логика истории. Путь.
             <br />
             <br />
@@ -58,27 +54,14 @@ const Whyus = () => {
           </motion.p>
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT COLLAGE */}
         <motion.div
+          className={styles.right}
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className={styles.right}
         >
-          <div className={styles.collage}>
-            <div className={styles.leftCol}>
-              <div className={styles.imgBox}>
-                <Image src="/images/harvard.jpg" alt="Harvard" fill />
-              </div>
-
-              <div className={styles.imgBox}>
-                <Image src="/images/yale.jpg" alt="Yale" fill />
-              </div>
-            </div>
-
-            <div className={styles.rightCol}>
-              <Image src="/images/collage.jpg" alt="Campus" fill />
-            </div>
+          <div className={styles.singleImage}>
+            <Image src="/images/image.jpg" alt="Campus collage" fill priority />
           </div>
         </motion.div>
       </div>

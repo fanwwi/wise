@@ -57,7 +57,7 @@ export default function Compare() {
 
           <div className={styles.statsRow}>
             <div className={styles.miniStat}>
-              <span>92%</span>
+              <span>87%</span>
               <p>accept rate boost</p>
             </div>
             <div className={styles.miniStat}>

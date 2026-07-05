@@ -36,7 +36,7 @@ export default function Value() {
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>
-          Поступление в топ-вузы — это <span>стратегия</span>, а не документы
+          Поступление в топ-вузы — это <span>стратегия</span>, а не просто документы
         </h2>
 
         <p className={styles.subtitle}>

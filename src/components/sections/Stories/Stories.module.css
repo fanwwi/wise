@@ -30,16 +30,38 @@
   color: #1f86ff;
 }
 
-/* track — плавный infinite */
 .track {
   display: flex;
-  width: max-content;
   gap: 28px;
 
-  animation: scroll 10s linear infinite; /* 🔥 быстрее */
-  will-change: transform;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 
-  transform: translateZ(0);
+  padding: 10px;
+
+  -webkit-overflow-scrolling: touch;
+  border-radius: 20px;
+
+}
+
+/* карточки “прилипают” */
+.card {
+  min-width: 420px;
+  border-radius: 28px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+  scroll-snap-align: start;
+}
+
+/* скрываем scrollbar */
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track {
+  scrollbar-width: none;
 }
 
 /* 🔥 ВАЖНО: 50% потому что мы дублировали массив */
