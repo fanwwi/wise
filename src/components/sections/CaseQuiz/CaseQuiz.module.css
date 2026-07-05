@@ -237,3 +237,138 @@
 .restart:hover {
   cursor: pointer;
 }
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .stepCard,
+  .analysis,
+  .result {
+    padding: 32px;
+  }
+
+  .question {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   MOBILE — CORE FIX
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 70px 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .progress {
+    font-size: 11px;
+  }
+
+  .stepCard {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .question {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .options {
+    gap: 8px;
+  }
+
+  .option {
+    padding: 10px 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .hint {
+    font-size: 11px;
+  }
+
+  .analysis {
+    padding: 30px 18px;
+  }
+
+  .analysis h3 {
+    font-size: 16px;
+  }
+
+  .analysis p {
+    font-size: 12px;
+  }
+
+  .result {
+    padding: 28px 16px;
+    border-radius: 18px;
+  }
+
+  .resultTitle {
+    font-size: 20px;
+  }
+
+  .uniTitle {
+    font-size: 14px;
+  }
+
+  .universities {
+    gap: 8px;
+  }
+
+  .uniCard {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .uniName {
+    font-size: 14px;
+  }
+
+  .uniMeta {
+    font-size: 11px;
+  }
+
+  .cta {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .restart {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (iPhone SE vibe)
+========================= */
+@media (max-width: 380px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .stepCard {
+    padding: 16px;
+  }
+
+  .option {
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+
+  .resultTitle {
+    font-size: 18px;
+  }
+}

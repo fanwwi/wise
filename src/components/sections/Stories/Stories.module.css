@@ -12,27 +12,16 @@
   margin-bottom: 60px;
 }
 
-/* viewport — ключ */
+/* VIEWPORT */
 .viewport {
   overflow: hidden;
   width: 100%;
 }
 
-.hook {
-  color: white;
-  font-size: 18px;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.highlight {
-  color: #1f86ff;
-}
-
+/* TRACK */
 .track {
   display: flex;
-  gap: 28px;
+  gap: 24px;
 
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -40,59 +29,31 @@
   padding: 10px;
 
   -webkit-overflow-scrolling: touch;
-  border-radius: 20px;
-
+  scrollbar-width: none;
 }
 
-/* карточки “прилипают” */
-.card {
-  min-width: 420px;
-  border-radius: 28px;
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
-  scroll-snap-align: start;
-}
-
-/* скрываем scrollbar */
 .track::-webkit-scrollbar {
   display: none;
 }
 
-.track {
-  scrollbar-width: none;
-}
-
-/* 🔥 ВАЖНО: 50% потому что мы дублировали массив */
-@keyframes scroll {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-30%, 0, 0);
-  }
-}
-
-/* pause */
-.viewport:hover .track {
-  animation-play-state: paused;
-}
-
-/* CARD */
+/* CARD — БАЗА */
 .card {
-  min-width: 420px;
-  border-radius: 28px;
+  min-width: 380px;
+  max-width: 380px;
+
+  border-radius: 22px;
   overflow: hidden;
 
   background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+
+  scroll-snap-align: start;
 }
 
 /* IMAGE */
 .imageBox {
   position: relative;
-  height: 260px;
+  height: 230px;
 }
 
 .image {
@@ -105,59 +66,46 @@
 .overlay {
   position: absolute;
   inset: 0;
+
   display: flex;
   align-items: flex-end;
   justify-content: center;
 
-  padding: 20px;
+  padding: 16px;
 
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
 }
 
-/* PLAY */
-.playBtn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.playBtn:hover {
-  transform: translate(-50%, -50%) scale(1.2);
-  background: rgba(31, 134, 255, 0.95);
-}
-
-.playIcon {
+/* TEXT */
+.hook {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.highlight {
+  color: #1f86ff;
 }
 
 /* INFO */
 .info {
-  padding: 18px;
+  padding: 14px;
 }
 
+/* NAME ROW */
 .nameRow {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
 }
 
+/* 🔥 grant + name НЕ ломаются */
 .name {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
   color: #0b3a8a;
 }
@@ -165,9 +113,68 @@
 .grant {
   color: #1f86ff;
   font-weight: 800;
+
+  white-space: nowrap;
 }
 
+/* COUNTRY */
 .country {
   color: #1f86ff;
   font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 14px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+
+  /* 🔥 одна карточка на экран */
+  .card {
+    min-width: 78vw;
+    max-width: 78vw;
+    border-radius: 18px;
+  }
+
+  .imageBox {
+    height: 170px;
+  }
+
+  .hook {
+    font-size: 13px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .grant {
+    font-size: 13px;
+  }
+
+  .country {
+    font-size: 12px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 420px) {
+  .card {
+    min-width: 86vw;
+    max-width: 86vw;
+  }
+
+  .imageBox {
+    height: 150px;
+  }
+
+  .hook {
+    font-size: 12px;
+  }
 }

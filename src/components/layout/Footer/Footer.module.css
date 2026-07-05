@@ -115,3 +115,95 @@
 .small {
   color: rgba(0, 229, 255, 0.7);
 }
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+  .container {
+    gap: 40px;
+  }
+
+  .links {
+    gap: 40px;
+  }
+
+  .logoImg {
+    width: 100px;
+  }
+}
+
+/* =========================
+   MOBILE — MAIN FIX
+========================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 70px 16px 30px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .logoImg {
+    width: 90px;
+    margin-left: 0;
+  }
+
+  .tagline {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .links {
+    width: 100%;
+    gap: 30px;
+    justify-content: space-between;
+  }
+
+  .links div {
+    min-width: 120px;
+  }
+
+  .links h4 {
+    font-size: 13px;
+  }
+
+  .links a {
+    font-size: 12px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 380px) {
+  .links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .links div {
+    min-width: unset;
+  }
+
+  .tagline {
+    font-size: 12px;
+  }
+
+  .bottom {
+    font-size: 11px;
+  }
+}

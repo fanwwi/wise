@@ -7,10 +7,10 @@ export default function FinalQuoteBlock() {
   return (
     <motion.section
       className={styles.wrapper}
-      initial={{ opacity: 0, y: 30, scale: 0.98 }}
+      initial={{ opacity: 0, y: 12, scale: 0.995 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
     >
       {/* aggressive background layers */}
       <div className={styles.flash1} />
