@@ -1,28 +1,22 @@
 import dynamic from "next/dynamic";
-
-// 1. Убираем фигурные скобки для Hero, раз там export default
 import Hero from "@/components/sections/Hero/Hero";
+import Whyus from "@/components/sections/Whyus/Whyus";
+// Остальное оставьте через dynamic
 
-// 2. Для динамических компонентов убираем .then(), если они все export default
-const Whyus = dynamic(() => import("@/components/sections/Whyus/Whyus"));
-const History = dynamic(() => import("@/components/sections/History/History"));
-const Mission = dynamic(() => import("@/components/sections/Mission/Mission"));
-const TrustBar = dynamic(
-  () => import("@/components/sections/TrustBar/TrustBar"),
-);
-const Value = dynamic(() => import("@/components/sections/Value/Value"));
-const Roadmap = dynamic(() => import("@/components/sections/Roadmap/Roadmap"));
-const Compare = dynamic(() => import("@/components/sections/Compare/Compare"));
-const Countries = dynamic(
-  () => import("@/components/sections/Countries/Countries"),
-);
-const Stories = dynamic(() => import("@/components/sections/Stories/Stories"));
-const CaseQuiz = dynamic(
-  () => import("@/components/sections/CaseQuiz/CaseQuiz"),
-);
-const Partners = dynamic(() => import("@/components/ui/Partners/Partners"));
-const FinalQuoteBlock = dynamic(
-  () => import("@/components/sections/FinalQuoteBlock/FinalQuoteBlock"),
+// Добавляем минимальную высоту, чтобы контент не «прыгал» при подгрузке
+const LoadingFallback = () => <div className="h-[200px] w-full" />;
+const History = dynamic(() => import("@/components/sections/History/History"), {
+  loading: LoadingFallback,
+});
+const About = dynamic(() => import("@/components/Structure/About"), {
+  loading: LoadingFallback,
+});
+const Services = dynamic(() => import("@/components/Structure/Services"), {
+  loading: LoadingFallback,
+});
+const BottomSection = dynamic(
+  () => import("@/components/Structure/BottomSection"),
+  { loading: LoadingFallback },
 );
 
 export default function Home() {
@@ -30,17 +24,9 @@ export default function Home() {
     <main>
       <Hero />
       <Whyus />
-      <History />
-      <Mission />
-      <TrustBar />
-      <Value />
-      <Roadmap />
-      <Compare />
-      <Countries />
-      <Stories />
-      <CaseQuiz />
-      <Partners />
-      <FinalQuoteBlock />
+      <About />
+      <Services />
+      <BottomSection />
     </main>
   );
 }

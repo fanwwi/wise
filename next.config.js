@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Убедитесь, что здесь нет basepath или assetPrefix
-  // Если есть — закомментируйте их и попробуйте собрать заново
+  // Ваши текущие настройки, если они есть
 };
 
-module.exports = nextConfig;
+// Подключаем анализатор
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
+// Экспортируем обернутый конфиг
+module.exports = withBundleAnalyzer(nextConfig);
