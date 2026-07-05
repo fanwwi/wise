@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const History = () => {
   return (
-    <div className={styles.heroWrapper}>
+    <section className={styles.heroWrapper} id="history">
       <div className={styles.topBanner}>
         <h2 className={styles.bannerTitle}>
           WISE — система полного раскрытия личности кандидата для поступления в
@@ -68,7 +68,7 @@ const History = () => {
           </motion.div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

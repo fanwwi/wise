@@ -11,7 +11,7 @@ const points = [
 
 const Mission = () => {
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.wrapper} id="mission">
       {/* ambient glow */}
       <motion.div
         className={styles.glow}
