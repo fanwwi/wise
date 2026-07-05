@@ -3,6 +3,8 @@ import Compare from "@/components/sections/Compare/Compare";
 import Countries from "@/components/sections/Countries/Countries";
 import FinalQuoteBlock from "@/components/sections/FinalQuoteBlock/FinalQuoteBlock";
 import { Hero } from "@/components/sections/Hero/Hero";
+import History from "@/components/sections/History/History";
+import Mission from "@/components/sections/Mission/Mission";
 import Roadmap from "@/components/sections/Roadmap/Roadmap";
 import Stories from "@/components/sections/Stories/Stories";
 import { TrustBar } from "@/components/sections/TrustBar/TrustBar";
@@ -16,14 +18,16 @@ export default function Home() {
     <main>
       <Hero />
       <Whyus />
+      <History />
+      <Mission />
       <TrustBar />
-      <Compare />
       <Value />
-      <Partners />
       <Roadmap />
+      <Compare />
       <Countries />
       <Stories />
       <CaseQuiz />
+      <Partners />
       <FinalQuoteBlock />
     </main>
   );

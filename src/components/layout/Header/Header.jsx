@@ -56,6 +56,8 @@ export const Header = () => {
 
           <div className={styles.links}>
             <a href="#about">О нас</a>
+            <a href="#history">История создания</a>
+            <a href="#mission">Наша миссия</a>
             <a href="#countries">Страны</a>
             <a href="#results">Истории</a>
             <a href="#quiz">Подбор вуза</a>
@@ -112,6 +114,14 @@ export const Header = () => {
 
               <a href="#about" onClick={closeMenu}>
                 О нас
+              </a>
+
+              <a href="#history" onClick={closeMenu}>
+                История создания
+              </a>
+
+              <a href="#mission" onClick={closeMenu}>
+                Наша миссия
               </a>
 
               <a href="#countries" onClick={closeMenu}>
