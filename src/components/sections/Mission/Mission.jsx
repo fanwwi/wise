@@ -4,9 +4,18 @@ import { motion } from "framer-motion";
 import styles from "./Mission.module.css";
 
 const points = [
-  { icon: "🎯", text: "ЦА больше не вне глобального поля конкуренции" },
-  { icon: "🌍", text: "СНГ подключается к международному треку поступления" },
-  { icon: "⚡", text: "Доступ без элитных входов и “закрытых дверей”" },
+  {
+    icon: "🌏",
+    text: "Открываем доступ к мировому образованию для школьников Центральной Азии и СНГ.",
+  },
+  {
+    icon: "🧭",
+    text: "Показываем понятный путь туда, где раньше казалось «не для нас».",
+  },
+  {
+    icon: "⚖️",
+    text: "Талант должен определять будущее, а не место рождения или доход семьи.",
+  },
 ];
 
 export default function Mission() {
@@ -26,17 +35,16 @@ export default function Mission() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className={styles.badge}>MISSION // WISE SYSTEM</div>
+        <div className={styles.badge}>OUR MISSION</div>
 
         <h2 className={styles.title}>
-          Мы убираем разрыв между <span>талантом</span> и{" "}
-          <span>топ-университетами мира</span>
+          Сократить <span>образовательное неравенство</span> в Центральной Азии
         </h2>
 
         <p className={styles.text}>
-          Поступление слишком долго было закрытой игрой для тех, кто “в теме”.
-          <br />
-          Мы превращаем его в систему, где у каждого есть маршрут, а не догадки.
+          Мы хотим, чтобы каждый умный и мотивированный ребёнок имел доступ к
+          мировому образованию независимо от того, где он родился и сколько
+          зарабатывает его семья.
         </p>
 
         <div className={styles.points}>
@@ -60,9 +68,9 @@ export default function Mission() {
           whileInView={{ opacity: 0.7 }}
           transition={{ delay: 0.4 }}
         >
-          Поступление — это не удача. Это архитектура.
+          Возможности должны зависеть от потенциала, а не от обстоятельств.
         </motion.div>
       </motion.div>
     </section>
   );
-};
+}
