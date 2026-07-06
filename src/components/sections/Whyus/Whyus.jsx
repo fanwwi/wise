@@ -42,7 +42,8 @@ export default function Whyus() {
             <Image
               src="/images/image.webp"
               alt="Students studying on international university campus representing global education opportunities"
-              fill
+              width={900}
+              height={600}
               priority
             />
           </div>
