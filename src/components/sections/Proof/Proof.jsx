@@ -11,7 +11,7 @@ import {
 
 export default function Proof() {
   return (
-    <section className={styles.section} id="proof">
+    <section className={styles.section} id="limon">
       <motion.div
         className={styles.card}
         initial={{ opacity: 0, y: 40 }}

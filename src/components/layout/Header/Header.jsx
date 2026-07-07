@@ -58,6 +58,7 @@ export default function Header () {
             <a href="#about">О нас</a>
             <a href="#history">История создания</a>
             <a href="#mission">Наша миссия</a>
+            <a href="#limon">Медиа</a>
             <a href="#countries">Страны</a>
             <a href="#results">Истории</a>
             <a href="#quiz">Подбор вуза</a>
@@ -122,6 +123,10 @@ export default function Header () {
 
               <a href="#mission" onClick={closeMenu}>
                 Наша миссия
+              </a>
+
+              <a href="#limon" onClick={closeMenu}>
+                Медиа подтверждение
               </a>
 
               <a href="#countries" onClick={closeMenu}>
