@@ -68,11 +68,11 @@
 }
 
 .storyGrid {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -137,12 +137,20 @@
   box-shadow: 0 30px 80px rgba(0, 90, 255, 0.15);
 }
 
-/* ================= MOBILE ================= */
+@media (max-width: 1100px) {
+  .storyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .storyGrid {
     grid-template-columns: 1fr;
   }
+}
 
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
   .storySection {
     padding: 60px 16px;
   }

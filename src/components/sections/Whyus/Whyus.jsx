@@ -40,7 +40,7 @@ export default function Whyus() {
         >
           <div className={styles.singleImage}>
             <Image
-              src="/images/image.webp"
+              src="/images/image.png"
               alt="Students studying on international university campus representing global education opportunities"
               width={900}
               height={600}

@@ -1,28 +1,31 @@
 .section {
-  padding: 100px 24px;
+  padding: 110px 24px;
   background: #f6f9ff;
 }
 
 .title {
   text-align: center;
-  font-size: 40px;
-  font-weight: 800;
+  font-size: 38px;
+  font-weight: 900;
   color: #00429e;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+  line-height: 1.2;
 }
 
 /* WRAPPER */
+
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 18px;
 }
 
 /* ARROWS */
+
 .btn {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -34,7 +37,8 @@
   align-items: center;
   justify-content: center;
 
-  transition: 0.2s ease;
+  transition: 0.25s ease;
+  flex-shrink: 0;
 }
 
 .btn:hover {
@@ -42,15 +46,18 @@
 }
 
 /* CAROUSEL */
+
 .carousel {
   display: flex;
-  gap: 16px;
+  gap: 24px;
 
   overflow-x: auto;
   scroll-behavior: smooth;
 
-  max-width: 1200px;
-  padding: 8px;
+  max-width: 1400px;
+  width: 100%;
+
+  padding: 10px;
 
   scroll-snap-type: x mandatory;
 }
@@ -59,30 +66,33 @@
   display: none;
 }
 
-/* CARD — 🔥 УЖАТА ЖЁСТКО */
-.card {
-  min-width: 260px; /* 🔥 было 320 */
-  max-width: 260px;
+/* CARD */
 
-  border-radius: 16px;
+.card {
+  min-width: 360px;
+  max-width: 360px;
+
+  border-radius: 22px;
   overflow: hidden;
 
-  background: transparent;
+  background: white;
 
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 66, 158, 0.12);
 
   transition: 0.3s ease;
   scroll-snap-align: start;
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(0, 66, 158, 0.18);
 }
 
 /* IMAGE */
+
 .imageBox {
   position: relative;
-  height: 150px; /* 🔥 было 220 */
+  height: 220px;
 }
 
 .image {
@@ -94,152 +104,201 @@
 .overlay {
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.25),
     transparent
   );
 }
 
-/* TOP */
+/* TOP CONTENT */
+
 .topContent {
   position: absolute;
-  bottom: 8px;
-  left: 8px;
+  bottom: 14px;
+  left: 14px;
 
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
 
   color: white;
-  font-weight: 700;
-  font-size: 14px; /* 🔥 меньше */
 }
 
 .flag {
-  width: 26px;
-  height: 14px;
+  width: 34px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.country {
+  font-size: 20px;
+  font-weight: 800;
 }
 
 /* INFO */
+
 .info {
-  background: white;
-  padding: 10px 10px 12px; /* 🔥 компакт */
+  padding: 18px;
 }
 
-/* DESC */
+/* DESCRIPTION */
+
 .desc {
-  font-size: 12px;
+  font-size: 15px;
+  line-height: 1.6;
   color: #0b2a55;
-  opacity: 0.75;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
 }
 
-/* 🔥 ВАЖНО: factors в 1 строку */
+/* FACTORS */
+
 .factors {
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 700;
   color: #0b63ff;
-  font-weight: 600;
+  line-height: 1.5;
 
-  white-space: nowrap; /* НЕ переносится */
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
 /* BOTTOM */
+
 .bottom {
   display: flex;
-  flex-direction: column; /* 🔥 как ты просил */
-  align-items: flex-start;
-  gap: 6px;
+  flex-direction: column;
+  gap: 12px;
 
   border-top: 1px solid rgba(0, 0, 0, 0.06);
-  padding-top: 8px;
+  padding-top: 14px;
 }
 
-/* PRICE BLOCK */
+/* PRICE */
+
 .priceBox {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  line-height: 1.1;
+  gap: 4px;
+}
+
+.priceLabel {
+  font-size: 12px;
+  color: #6c7b95;
 }
 
 .price {
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
   color: #0b2a55;
-  font-size: 13px;
 }
 
 /* CTA */
+
 .more {
-  background: #0b63ff;
-  color: white;
-  text-decoration: none;
-  border: none;
-  padding: 6px 10px;
+  width: 100%;
+
+  padding: 12px 14px;
 
   border-radius: 999px;
 
-  font-size: 11px;
-  cursor: pointer;
+  background: #0b63ff;
+  color: white;
 
-  width: 100%;
+  text-decoration: none;
   text-align: center;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
 }
 
 .more:hover {
   background: #094fd1;
 }
 
-/* ================= MOBILE EXTRA SHRINK ================= */
-@media (max-width: 768px) {
-  .section {
-    padding: 60px 14px;
-  }
+/* TABLET */
 
+@media (max-width: 1024px) {
   .title {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  .btn {
-    width: 32px;
-    height: 32px;
+    font-size: 38px;
   }
 
   .card {
-    min-width: 72vw; /* 🔥 одна карточка почти на экран */
-    max-width: 72vw;
-  }
-
-  .imageBox {
-    height: 130px;
-  }
-
-  .topContent {
-    font-size: 12px;
-  }
-
-  .desc {
-    font-size: 11.5px;
-  }
-
-  .factors {
-    font-size: 10.5px;
+    min-width: 330px;
+    max-width: 330px;
   }
 }
 
+/* MOBILE */
+
 @media (max-width: 768px) {
+  .section {
+    padding: 70px 0;
+  }
+
+  .title {
+    font-size: 28px;
+    padding: 0 18px;
+    margin-bottom: 30px;
+  }
+
   .btn {
     display: none;
   }
 
   .carousel {
-    padding: 10px 14px;
-    scroll-snap-type: x mandatory;
+    padding: 10px 18px;
+    gap: 16px;
+  }
+
+  .card {
+    min-width: 88vw;
+    max-width: 88vw;
+  }
+
+  .imageBox {
+    height: 220px;
+  }
+
+  .country {
+    font-size: 18px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .factors {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .more {
+    font-size: 13px;
+    padding: 12px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .card {
+    min-width: 92vw;
+    max-width: 92vw;
+  }
+
+  .imageBox {
+    height: 210px;
+  }
+
+  .info {
+    padding: 16px;
   }
 }

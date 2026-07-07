@@ -17,7 +17,7 @@ const countries = [
     name: "Canada",
     flag: "https://flagcdn.com/ca.svg",
     image: "/images/canada.webp",
-    desc: "Все что нужно для тебя: баланс образования, жизни и иммиграции.",
+    desc: "Все что нужно для именно тебя: баланс образования, жизни и иммиграции.",
     factors: "Безопасность • Работа • Иммиграция",
     price: "$6,000+",
   },
@@ -66,7 +66,7 @@ const countries = [
     name: "Hungary",
     flag: "https://flagcdn.com/hu.svg",
     image: "/images/hungary.webp",
-    desc: "Европейское образование по доступной цене.",
+    desc: "Европейское образование по самой доступной цене.",
     factors: "Медицина • Европа • Доступность",
     price: "$2,500+",
   },
@@ -142,8 +142,7 @@ export default function Countries() {
 
                 <div className={styles.bottom}>
                   <div className={styles.priceBox}>
-                    <span className={styles.priceLabel}>from</span>
-                    <span className={styles.price}>{c.price}</span>
+                    <span className={styles.price}>Стоимость обучения: {c.price}</span>
                   </div>
 
                   <a

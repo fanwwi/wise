@@ -42,7 +42,7 @@ export default function Hero() {
           className={styles.title}
         >
           Покажем университету <br />
-          <span className={styles.accent}>настоящего тебя</span>
+          <span className={styles.accent}>настоящего себя</span>
         </motion.h1>
 
         <motion.p
@@ -88,8 +88,8 @@ export default function Hero() {
           className={styles.stats}
         >
           {[
-            { n: "25 000+", t: "слов успешного эссе и заявок" },
-            { n: "55+ часов", t: "стратегической индивидуальной работы" },
+            { n: "25 000+", t: "написанных слов для улучшения навыков эссе" },
+            { n: "55+ часов", t: "стратегических видеоуроков о создании лучшего профиля" },
             {
               n: "19 часов",
               t: "1-на-1 разбор стратегии и профиля с экспертом",
