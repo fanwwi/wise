@@ -42,7 +42,7 @@ export default function Hero() {
           className={styles.title}
         >
           Покажем университету <br />
-          <span className={styles.accent}>настоящего себя</span>
+          <span className={styles.accent}>настоящего тебя</span>
         </motion.h1>
 
         <motion.p
