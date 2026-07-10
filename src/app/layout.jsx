@@ -16,8 +16,11 @@ const Footer = dynamic(() =>
 );
 
 export const metadata = {
-  title: "WISE Programs — поступление в топ-университеты мира",
-  description: "WISE — система поступления в топ-вузы США, Европы и Азии.",
+  title: "WISE Programs",
+  description: "Поступление в топовые университеты мира",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
