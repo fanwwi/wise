@@ -142,7 +142,7 @@ export default function Countries() {
 
                 <div className={styles.bottom}>
                   <div className={styles.priceBox}>
-                    <span className={styles.price}>Стоимость обучения: {c.price}</span>
+                    <span className={styles.price}>Обучение в год: {c.price}</span>
                   </div>
 
                   <a
