@@ -1,6 +1,7 @@
 "use client";
 
 import { FaSearch, FaUserGraduate, FaFileAlt, FaRocket } from "react-icons/fa";
+
 import BrightBtn from "../../ui/BrightBtn/BrightBtn";
 import styles from "./Roadmap.module.css";
 
@@ -9,22 +10,22 @@ export default function Roadmap() {
     {
       icon: <FaSearch />,
       title: "Разбор профиля и потенциала",
-      text: "Находим твои сильные стороны и точки роста для топ-вузов",
+      text: "Находим твои сильные стороны и точки роста для поступления в топовые университеты.",
     },
     {
       icon: <FaUserGraduate />,
       title: "Построение стратегии поступления",
-      text: "Формируем маршрут: страна, университет, шансы и план действий",
+      text: "Подбираем страны, университеты и создаём персональную дорожную карту.",
     },
     {
       icon: <FaFileAlt />,
-      title: "Сбор и упаковка заявки",
-      text: "Эссе, достижения и история — превращаем в сильный сильный конкурентоспособный профиль",
+      title: "Упаковка сильной заявки",
+      text: "Эссе, достижения и история превращаются в конкурентоспособный профиль кандидата.",
     },
     {
       icon: <FaRocket />,
-      title: "Подача и результат",
-      text: "Сопровождаем до офферов и финального решения университетов",
+      title: "Подача и получение офферов",
+      text: "Сопровождаем до финальных решений университетов и получения офферов.",
     },
   ];
 
@@ -36,20 +37,27 @@ export default function Roadmap() {
         </h2>
 
         <p className={styles.subtitle}>
-          Чёткая система поступления без хаоса — от анализа до оффера
+          Пошаговая система поступления от анализа профиля до финального оффера
         </p>
 
         <div className={styles.timeline}>
-          {steps.map((s, i) => (
-            <div key={i} className={styles.step}>
-              <div className={styles.iconBox}>{s.icon}</div>
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className={`${styles.timelineItem} ${
+                index % 2 === 0 ? styles.left : styles.right
+              }`}
+            >
+              <div className={styles.dot} />
 
-              <div className={styles.content}>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
+              <div className={styles.card}>
+                <div className={styles.iconBox}>{step.icon}</div>
+
+                <div className={styles.content}>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
               </div>
-
-              {i !== steps.length - 1 && <div className={styles.line} />}
             </div>
           ))}
         </div>

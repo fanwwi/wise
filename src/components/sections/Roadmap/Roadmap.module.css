@@ -1,224 +1,288 @@
 .section {
-  background: radial-gradient(circle at top, #f8fbff, #eaf3ff);
-  padding: 90px 24px;
-  position: relative;
+  padding: 110px 24px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+
   overflow: hidden;
 }
 
-/* glow фон */
-.section::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-
-  background:
-    radial-gradient(
-      circle at 20% 10%,
-      rgba(0, 120, 255, 0.15),
-      transparent 50%
-    ),
-    radial-gradient(circle at 80% 60%, rgba(0, 180, 255, 0.12), transparent 55%);
-
-  filter: blur(60px);
-  opacity: 0.9;
-}
-
 .container {
-  max-width: 980px;
+  max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
 }
 
-/* TITLE */
 .title {
-  font-size: 42px;
+  text-align: center;
+  font-size: 48px;
   font-weight: 900;
   color: #0b2a55;
-  text-align: center;
-  letter-spacing: -0.04em;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .title span {
-  background: linear-gradient(90deg, #0b63ff, #00c2ff);
+  background: linear-gradient(90deg, #0059ff, #00d5ff);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
   text-align: center;
+  max-width: 650px;
+  margin: 0 auto 80px;
+
+  font-size: 18px;
   color: rgba(11, 42, 85, 0.65);
-  font-size: 15.5px;
-  margin-bottom: 50px;
+  line-height: 1.7;
 }
 
-/* TIMELINE */
+/* ================= TIMELINE ================= */
+
 .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* STEP */
-.step {
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+  bottom: 0;
+
+  width: 4px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(to bottom, #0059ff, #00d8ff);
+
+  border-radius: 999px;
+}
+
+/* ================= ITEM ================= */
+
+.timelineItem {
   position: relative;
 
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  width: 100%;
+  min-height: 220px;
 
-  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+/* ================= DOT ================= */
+
+.dot {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background: #0059ff;
+
+  border: 6px solid white;
+
+  box-shadow: 0 0 30px rgba(0, 120, 255, 0.35);
+
+  z-index: 5;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  position: relative;
+
+  width: 42%;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(0, 90, 255, 0.08);
+
+  box-shadow: 0 20px 60px rgba(0, 70, 180, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 35px 90px rgba(0, 90, 255, 0.15);
+}
+
+/* ================= CONNECTOR ================= */
+
+.left .card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -60px;
+  top: 50%;
+
+  width: 60px;
+  height: 3px;
+
+  transform: translateY(-50%);
+
+  background: linear-gradient(90deg, #0059ff, #00d8ff);
+}
+
+.right .card::after {
+  content: "";
+
+  position: absolute;
+
+  left: -60px;
+  top: 50%;
+
+  width: 60px;
+  height: 3px;
+
+  transform: translateY(-50%);
+
+  background: linear-gradient(90deg, #00d8ff, #0059ff);
+}
+
+/* ================= ICON ================= */
+
+.iconBox {
+  width: 60px;
+  height: 60px;
 
   border-radius: 18px;
-
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-
-  border: 1px solid rgba(0, 120, 255, 0.08);
-
-  box-shadow: 0 15px 40px rgba(0, 40, 120, 0.06);
-
-  transition: 0.25s ease;
-}
-
-.step:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0, 140, 255, 0.25);
-  box-shadow: 0 25px 70px rgba(0, 120, 255, 0.12);
-}
-
-/* ICON */
-.iconBox {
-  width: 44px;
-  height: 44px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 12px;
-
-  background: linear-gradient(135deg, #0b63ff, #00a2ff);
+  font-size: 22px;
   color: white;
 
-  font-size: 16px;
+  margin-bottom: 18px;
 
-  flex-shrink: 0;
+  background: linear-gradient(135deg, #0059ff, #00cfff);
 
-  box-shadow: 0 10px 25px rgba(0, 120, 255, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 120, 255, 0.25);
 }
 
-/* TEXT */
+/* ================= TEXT ================= */
+
 .content h3 {
-  margin: 0;
-  font-size: 17px;
-  font-weight: 900;
+  font-size: 22px;
+  font-weight: 800;
   color: #0b2a55;
-  letter-spacing: -0.02em;
+
+  margin-bottom: 10px;
 }
 
 .content p {
-  margin-top: 4px;
-  font-size: 14.5px;
-  line-height: 1.5;
-  color: rgba(11, 42, 85, 0.65);
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(11, 42, 85, 0.72);
 }
 
-/* LINE */
-.line {
-  position: absolute;
-  left: 32px;
-  bottom: -10px;
+/* ================= CTA ================= */
 
-  width: 2px;
-  height: 18px;
-
-  background: linear-gradient(to bottom, #0b63ff, transparent);
-  opacity: 0.25;
-}
-
-/* CTA */
 .cta {
-  margin-top: 28px;
+  margin-top: 70px;
+
   display: flex;
   justify-content: center;
 }
 
-/* =========================
-   RESPONSIVE (ONLY TEXT SCALE)
-========================= */
+/* ================= TABLET ================= */
 
 @media (max-width: 900px) {
+  .timeline::before {
+    left: 24px;
+  }
+
+  .timelineItem {
+    justify-content: flex-start !important;
+    min-height: auto;
+
+    padding-left: 70px;
+    margin-bottom: 24px;
+  }
+
+  .dot {
+    left: 24px;
+    top: 42px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card::after {
+    display: none;
+  }
+
   .title {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .subtitle {
-    font-size: 14.5px;
-    margin-bottom: 40px;
-  }
-
-  .content h3 {
     font-size: 16px;
   }
-
-  .content p {
-    font-size: 14px;
-  }
 }
+
+/* ================= MOBILE ================= */
 
 @media (max-width: 600px) {
   .section {
-    padding: 70px 18px;
+    padding: 80px 18px;
   }
 
   .title {
-    font-size: 24px;
-    line-height: 1.25;
+    font-size: 26px;
   }
 
   .subtitle {
-    font-size: 13.5px;
-    margin-bottom: 30px;
+    font-size: 14px;
+    margin-bottom: 50px;
   }
 
-  .step {
-    padding: 16px 16px;
-    gap: 12px;
+  .card {
+    padding: 22px;
+    border-radius: 20px;
   }
 
   .iconBox {
-    width: 38px;
-    height: 38px;
-    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
   }
 
   .content h3 {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .content p {
-    font-size: 13.5px;
-    line-height: 1.45;
-  }
-}
-
-@media (max-width: 420px) {
-  .title {
-    font-size: 20px;
-  }
-
-  .subtitle {
-    font-size: 12.8px;
-  }
-
-  .content h3 {
     font-size: 14px;
   }
-
-  .content p {
-    font-size: 13px;
-  }
 }
-
