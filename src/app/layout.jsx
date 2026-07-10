@@ -16,7 +16,7 @@ const Footer = dynamic(() =>
 );
 
 export const metadata = {
-  title: "WISE Programs",
+  title: "WISE Programs - Поступление в топовые университеты",
   description: "Поступление в топовые университеты мира",
   icons: {
     icon: "/favicon.ico",
