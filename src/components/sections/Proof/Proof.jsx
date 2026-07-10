@@ -25,7 +25,7 @@ export default function Proof() {
         </div>
 
         <h2 className={styles.title}>
-          Наши истории <span>замечают медиа</span>
+          История нашей <span>со-основательницы</span>
         </h2>
 
         <p className={styles.subtitle}>
@@ -37,7 +37,7 @@ export default function Proof() {
           <div className={styles.photo}>
             <img
               src="/images/dilnaz.jpg"
-              alt="Дильназ Дуйшоналиева — основательница WISE Programs"
+              alt="Дильназ Дуйшоналиева — WISE Programs"
             />
           </div>
 
@@ -45,7 +45,7 @@ export default function Proof() {
             <div className={styles.source}>Limon KG</div>
 
             <h3>
-              Дильназ Дуйшоналиева из Бишкека - сооснователь WISE programs
+              Дильназ Дуйшоналиева из Бишкека -
               получила <strong>14 приглашений</strong> от университетов и
               колледжей США
             </h3>
