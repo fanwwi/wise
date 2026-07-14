@@ -4,76 +4,52 @@ import styles from "./Stories.module.css";
 
 const stories = [
   {
-    name: "Айгерим А",
-    grant: "$120,000",
-    country: "USA",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу БЕСПЛАТНО",
-    highlight: "БЕСПЛАТНО",
+    name: "Абасбекова Амира",
+    grant: "$20,000",
+    country: "United States, New-York",
+    image: "/images/students/amira.jpg",
+    hook: "Поступила на летнюю программу от New-York University на 90% Грант",
+    highlight: ["New-York University", "90% Грант"],
   },
   {
-    name: "Нурсултан К",
-    grant: "$85,000",
-    country: "Canada",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу БЕСПЛАТНО",
-    highlight: "БЕСПЛАТНО",
+    name: "Кубанычбекова Айзирек",
+    grant: "$24,500",
+    country: "United States, Massachusetts",
+    image: "/images/students/aizirek.jpg",
+    hook: "Поступила на летнюю программу от Umass Amherst БЕСПЛАТНО",
+    highlight: ["Umass Amherst", "БЕСПЛАТНО"],
   },
   {
-    name: "Мадина С",
-    grant: "$60,000",
-    country: "Germany",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу БЕСПЛАТНО",
-    highlight: "БЕСПЛАТНО",
+    name: "Баялиев Даниел",
+    grant: "$30,000",
+    country: "United States",
+    image: "/images/students/daniel.jpg",
+    hook: "Получил 100% финансирование летних программ Yale, Fordham и NYU",
+    highlight: ["100% финансирование", "Yale, Fordham и NYU"],
   },
   {
-    name: "Мадина С",
-    grant: "$60,000",
-    country: "Germany",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу БЕСПЛАТНО",
-    highlight: "БЕСПЛАТНО",
+    name: "Алиман Бакытбек Кызы",
+    grant: "$23,000",
+    country: "United States",
+    image: "images/students/aliman.jpg",
+    hook: "Получила приглашения на летние программы Cornell, Dartmouth, NYU и Rise с 100% финансированием",
+    highlight: ["Cornell, Dartmouth, NYU и Rise", "100% финансированием"],
   },
   {
-    name: "Мадина С",
-    grant: "$60,000",
-    country: "Germany",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу БЕСПЛАТНО",
-    highlight: "БЕСПЛАТНО",
+    name: "Байганова Дамели",
+    grant: "$15,000",
+    country: "United States",
+    image: "images/students/dameli.jpg",
+    hook: "Отобрана в престижные программы Fordham, NYU и Polygence с полным грантом",
+    highlight: ["Fordham, NYU и Polygence", "полным грантом"],
   },
   {
-    name: "Мадина С",
-    grant: "$60,000",
-    country: "Germany",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу БЕСПЛАТНО",
-    highlight: "БЕСПЛАТНО",
-  },
-  {
-    name: "Мадина С",
-    grant: "$60,000",
-    country: "Germany",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу БЕСПЛАТНО",
-    highlight: "БЕСПЛАТНО",
-  },
-  {
-    name: "Мадина С",
-    grant: "$60,000",
-    country: "Germany",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeyRG4I2IOBzS7tu2m4ktZ2KD22V2lEI5t94yPOemdyh7RwRTsLQJrc5QJ&s=10",
-    hook: "Поступил на летнюю программу БЕСПЛАТНО",
-    highlight: "БЕСПЛАТНО",
+    name: "Нурланбекова Бегимай",
+    grant: "$10,000",
+    country: "United States",
+    image: "images/students/begimai.jpg",
+    hook: "Поступила на элитные летние программы от NYU, Tufts и St. John’s college full на 100% грант",
+    highlight: ["NYU, Tufts и St. John’s college full", "100% грант"],
   },
 ];
 
@@ -95,14 +71,31 @@ export default function Stories() {
 
                 <div className={styles.overlay}>
                   <h3 className={styles.hook}>
-                    {s.hook.split(" ").map((w, idx) => (
-                      <span
-                        key={idx}
-                        className={w === s.highlight ? styles.highlight : ""}
-                      >
-                        {w}{" "}
-                      </span>
-                    ))}
+                    {(() => {
+                      let text = s.hook;
+
+                      s.highlight.forEach((item, index) => {
+                        text = text.replace(item, `|||${index}|||`);
+                      });
+
+                      return text
+                        .split(/(\|\|\|\d+\|\|\|)/)
+                        .map((part, idx) => {
+                          const match = part.match(/\|\|\|(\d+)\|\|\|/);
+
+                          if (match) {
+                            const highlightText = s.highlight[Number(match[1])];
+
+                            return (
+                              <span key={idx} className={styles.highlight}>
+                                {highlightText}
+                              </span>
+                            );
+                          }
+
+                          return part;
+                        });
+                    })()}
                   </h3>
                 </div>
               </div>
