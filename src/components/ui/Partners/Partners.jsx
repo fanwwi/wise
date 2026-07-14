@@ -70,7 +70,7 @@ const partners = [
 ];
 
 export default function Partners() {
-  const loop = [...partners, ...partners];
+  const loop = [...partners, ...partners, ...partners];
 
   return (
     <section className={styles.section}>
