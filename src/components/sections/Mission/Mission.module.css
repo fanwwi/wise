@@ -142,3 +142,13 @@
     font-weight: 400;
   }
 }
+
+.pointIcon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  color: #00e5ff;
+  margin-right: 8px;
+  vertical-align: -3px;
+}

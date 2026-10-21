@@ -1,19 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaGlobeAmericas, FaCompass, FaBalanceScale } from "react-icons/fa";
+
 import styles from "./Mission.module.css";
 
 const points = [
   {
-    icon: "🌏",
+    icon: FaGlobeAmericas,
     text: "Открываем доступ к мировому образованию для школьников Центральной Азии и СНГ.",
   },
   {
-    icon: "🧭",
+    icon: FaCompass,
     text: "Показываем понятный путь туда, где раньше казалось «не для нас».",
   },
   {
-    icon: "⚖️",
+    icon: FaBalanceScale,
     text: "Талант и упорство должны определять будущее, а не место рождения или доход семьи.",
   },
 ];
@@ -21,11 +23,18 @@ const points = [
 export default function Mission() {
   return (
     <section className={styles.wrapper} id="mission">
-      {/* ambient glow */}
+      {/* Ambient glow */}
       <motion.div
         className={styles.glow}
-        animate={{ scale: [1, 1.15, 1], opacity: [0.35, 0.6, 0.35] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.35, 0.6, 0.35],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       />
 
       <motion.div
@@ -48,18 +57,27 @@ export default function Mission() {
         </p>
 
         <div className={styles.points}>
-          {points.map((p, i) => (
-            <motion.div
-              key={i}
-              className={styles.point}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.4 }}
-              whileHover={{ x: 6 }}
-            >
-              <span>{p.icon}</span> {p.text}
-            </motion.div>
-          ))}
+          {points.map((point, index) => {
+            const Icon = point.icon;
+
+            return (
+              <motion.div
+                key={index}
+                className={styles.point}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  delay: index * 0.1,
+                  duration: 0.4,
+                }}
+                whileHover={{ x: 6 }}
+              >
+                <Icon className={styles.pointIcon} aria-hidden="true" />
+
+                {point.text}
+              </motion.div>
+            );
+          })}
         </div>
 
         <motion.div

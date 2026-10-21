@@ -35,7 +35,7 @@ export default function FinalQuoteBlock() {
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          ⚡ ТВОЙ СЛЕДУЮЩИЙ ШАГ
+          ТВОЙ СЛЕДУЮЩИЙ ШАГ
         </motion.div>
 
         <h2 className={styles.title}>Готов начать?</h2>
@@ -57,7 +57,7 @@ export default function FinalQuoteBlock() {
           Получить бесплатный разбор сейчас
         </motion.a>
 
-        <div className={styles.micro}>⏳ Начни уже сегодня - вместе с WISE</div>
+        <div className={styles.micro}> Начни уже сегодня - вместе с WISE</div>
       </motion.div>
     </motion.section>
   );
